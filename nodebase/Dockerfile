@@ -1,11 +1,24 @@
-FROM node:12.15.0 AS builder
-WORKDIR /home/node/app
-ADD package.json /home/node/app/
-ADD . /home/node/app
-RUN yarn
-RUN yarn prod
+FROM prodenv/ubuntu-base
+LABEL maintainer="starkwang wsd312@163.com"
+LABEL name="node-env"
+LABEL version="latest"
 
-FROM nginx:alpine
-COPY /nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /home/node/app/build /usr/share/nginx/html
-EXPOSE 8080
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+RUN apt-get install -y nodejs
+
+RUN npm install -g yarn
+RUN yarn global add pm2
+
+# Set china mirror
+# RUN echo "alias yarn='yarn --registry=https://registry.npm.taobao.org'" >> /etc/bash.bashrc
+
+# Print node versions
+RUN node -v
+RUN npm -v
+
+RUN yarn config list
+
+# Set WORKDIR to nvm directory
+WORKDIR /home
+
+ENTRYPOINT ["/bin/bash"]
