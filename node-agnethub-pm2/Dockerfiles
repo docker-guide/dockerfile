@@ -1,0 +1,16 @@
+FROM registry.cn-beijing.aliyuncs.com/someet/node:ubuntu18.04-node-pm2-agenthub
+
+# RUN mkdir -p 用于在Image里创建一个文件夹，将来用于保存我们的代码
+RUN mkdir -p /usr/src/app && export NODE_LOG_DIR=/tmp && export ENABLE_NODE_LOG=YES
+
+# WORKDIR 是将我们创建的文件夹做为工作目录
+WORKDIR /usr/src/app
+
+# COPY是把本机当前目录下的所有文件拷贝到Image的工作目录下
+COPY . /usr/src/app
+
+# 配置服务器端口
+EXPOSE 80
+
+# 最后 配置启动项目的命令, local 是环境变量
+ENTRYPOINT [ "sh", "run.sh","local" ]
