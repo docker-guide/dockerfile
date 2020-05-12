@@ -3,19 +3,21 @@ FROM rdmix/ubuntu-base:latest
 LABEL maintainer="starkwang wsd312@163.com"
 LABEL name="ubuntu-base"
 LABEL version="latest"
+ENV ALINODE_VERSION v6.0.0
+ENV ALINODE_BIN_DIR /root/.tnvm/versions/alinode/$ALINODE_VERSION/bin
 
 
 
 RUN apt-get -y install wget
+SHELL ["/bin/bash", "--login", "-c"]
 
 # install alinode
 RUN wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
 
 RUN echo 'export TNVM_DIR="/root/.tnvm"' >> ~/.bashrc
 
-SHELL ["/bin/bash", "--login", "-c"]
-
-RUN source ~/.bashrc \
+RUN source ~/.bashrc
+RUN source ~/.tnvm/tnvm.sh \
     && tnvm install alinode-v4.3.0 \
     && tnvm use alinode-v4.3.0 \
     && npm install @alicloud/agenthub -g \
@@ -25,8 +27,6 @@ RUN source ~/.bashrc \
 
 
 
-# ENV ALINODE_VERSION v6.0.0
-# ENV ALINODE_BIN_DIR /root/.tnvm/versions/alinode/$ALINODE_VERSION/bin
 
 # RUN apt-get install wget -y \
 #     && wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash \
