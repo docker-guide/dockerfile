@@ -13,6 +13,8 @@ RUN wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.s
 
 RUN echo 'export TNVM_DIR="/root/.tnvm"' >> ~/.bashrc
 
+SHELL ["/bin/bash", "--login", "-c"]
+
 RUN source ~/.bashrc \
     && tnvm install alinode-v4.3.0 \
     && tnvm use alinode-v4.3.0 \
