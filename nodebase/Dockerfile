@@ -3,7 +3,7 @@ LABEL maintainer="starkwang wsd312@163.com"
 LABEL name="node-env"
 LABEL version="latest"
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
 RUN apt-get install -y nodejs
 
 RUN npm install -g yarn
