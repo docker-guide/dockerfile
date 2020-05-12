@@ -1,47 +1,26 @@
 FROM rdmix/ubuntu-base:latest
-
 LABEL maintainer="starkwang wsd312@163.com"
-LABEL name="alinode-base"
+LABEL name="node-base"
 LABEL version="v0.0.1"
-ENV ALINODE_VERSION v6.0.0
-ENV ALINODE_BIN_DIR /root/.tnvm/versions/alinode/$ALINODE_VERSION/bin
+ENV NODE_VERSION v6.0.0
 
 
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash
+RUN apt-get install -y nodejs
 
-RUN apt-get -y install wget
-SHELL ["/bin/bash", "--login", "-c"]
+RUN npm install -g yarn
+RUN yarn global add pm2
 
-# install alinode
-RUN wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
+# Set china mirror
+# RUN echo "alias yarn='yarn --registry=https://registry.npm.taobao.org'" >> /etc/bash.bashrc
 
-RUN echo 'export TNVM_DIR="/root/.tnvm"' >> ~/.bashrc
+# Print node versions
+RUN node -v
+RUN npm -v
 
-RUN source ~/.bashrc
-RUN source ~/.tnvm/tnvm.sh \
-    && tnvm install alinode-$ALINODE_VERSION \
-    && tnvm use alinode-$ALINODE_VERSION \
-    && npm install @alicloud/agenthub -g \
-    # && npm config set registry https://registry.npm.taobao.org \ 不建议设置，可以在项目里面设置
-    && npm install pm2 -g --production \
-    && npm install yarn -g --production
+RUN yarn config list
 
-# echo env
-RUN echo NodeJS $(node -v) \
-    && echo npm $(npm -v) \
-    && echo tnvm $(tnvm -v) \
-    && echo which $(which node) \
-    && echo which $(which pm2) \
+# Set WORKDIR to nvm directory
+WORKDIR /home
 
-
-
-# RUN apt-get install wget -y \
-#     && wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash \
-#     && source ~/.bashrc \
-#     && tnvm install alinode-$ALINODE_VERSION \
-#     && tnvm use alinode-$ALINODE_VERSION \
-#     && npm config set registry https://registry.npm.taobao.org \
-#     && echo NodeJS $(node -v) \
-#     && npm install @alicloud/agenthub pm2 -g --production \
-#     && npm install --production \
-#     # link command to global
-#     && ln -s $ALINODE_BIN_DIR/* /usr/local/bin/
+ENTRYPOINT ["/bin/bash"]
