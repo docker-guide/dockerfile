@@ -4,17 +4,36 @@ LABEL maintainer="starkwang wsd312@163.com"
 LABEL name="ubuntu-base"
 LABEL version="latest"
 
-ENV ALINODE_VERSION v6.0.0
-ENV ALINODE_BIN_DIR /root/.tnvm/versions/alinode/$ALINODE_VERSION/bin
 
-RUN apt-get install wget -y \
-    && wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash \
-    && source ~/.bashrc \
-    && tnvm install alinode-$ALINODE_VERSION \
-    && tnvm use alinode-$ALINODE_VERSION \
+
+RUN yum -y install wget
+
+# install alinode
+RUN wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash
+
+RUN echo 'export TNVM_DIR="/root/.tnvm"' >> ~/.bashrc
+
+RUN source ~/.bashrc \
+    && tnvm install alinode-v4.3.0 \
+    && tnvm use alinode-v4.3.0 \
+    && npm install @alicloud/agenthub -g \
     && npm config set registry https://registry.npm.taobao.org \
-    && echo NodeJS $(node -v) \
-    && npm install @alicloud/agenthub pm2 -g --production \
-    && npm install --production \
-    # link command to global
-    && ln -s $ALINODE_BIN_DIR/* /usr/local/bin/
+    && npm install pm2 -g --productio
+
+
+
+
+# ENV ALINODE_VERSION v6.0.0
+# ENV ALINODE_BIN_DIR /root/.tnvm/versions/alinode/$ALINODE_VERSION/bin
+
+# RUN apt-get install wget -y \
+#     && wget -O- https://raw.githubusercontent.com/aliyun-node/tnvm/master/install.sh | bash \
+#     && source ~/.bashrc \
+#     && tnvm install alinode-$ALINODE_VERSION \
+#     && tnvm use alinode-$ALINODE_VERSION \
+#     && npm config set registry https://registry.npm.taobao.org \
+#     && echo NodeJS $(node -v) \
+#     && npm install @alicloud/agenthub pm2 -g --production \
+#     && npm install --production \
+#     # link command to global
+#     && ln -s $ALINODE_BIN_DIR/* /usr/local/bin/
