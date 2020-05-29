@@ -1,4 +1,4 @@
-FROM daocloud.io/library/ubuntu:18.04
+FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y vim wget && apt-get install -y software-properties-common && \
     add-apt-repository ppa:ondrej/php -y && \
