@@ -1,0 +1,3313 @@
+Sending build context to Docker daemon  81.41kB
+Step 1/7 : FROM daocloud.io/library/ubuntu:18.04
+ ---> c3c304cb4f22
+Step 2/7 : RUN apt-get update && apt-get install -y vim wget && apt-get install -y software-properties-common &&     add-apt-repository ppa:ondrej/php -y &&     apt-get update &&     apt-get install -y php7.4 php7.4-fpm php7.4-mysql php7.4-gd php7.4-mbstring php7.4-pdo php7.4-mysqli php7.4-xml
+ ---> Running in b0cae61abbc9
+Get:1 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [8815 B]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [59.3 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [854 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:9 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [931 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [20.1 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1385 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [73.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1228 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [8158 B]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [8286 B]
+Fetched 18.0 MB in 28s (644 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ca-certificates file libexpat1 libgpm2 libmagic-mgc libmagic1 libmpdec2
+  libpsl5 libpython3.6 libpython3.6-minimal libpython3.6-stdlib libreadline7
+  libsqlite3-0 libssl1.1 mime-support openssl publicsuffix readline-common
+  vim-common vim-runtime xxd xz-utils
+Suggested packages:
+  gpm readline-doc ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  ca-certificates file libexpat1 libgpm2 libmagic-mgc libmagic1 libmpdec2
+  libpsl5 libpython3.6 libpython3.6-minimal libpython3.6-stdlib libreadline7
+  libsqlite3-0 libssl1.1 mime-support openssl publicsuffix readline-common vim
+  vim-common vim-runtime wget xxd xz-utils
+0 upgraded, 24 newly installed, 0 to remove and 4 not upgraded.
+Need to get 14.1 MB of archives.
+After this operation, 64.5 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libssl1.1 amd64 1.1.1-1ubuntu2.1~18.04.6 [1301 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 openssl amd64 1.1.1-1ubuntu2.1~18.04.6 [614 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 ca-certificates all 20180409 [151 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic-mgc amd64 1:5.32-2ubuntu0.4 [184 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic1 amd64 1:5.32-2ubuntu0.4 [68.6 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 file amd64 1:5.32-2ubuntu0.4 [22.1 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libexpat1 amd64 2.2.5-3ubuntu0.2 [80.5 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/main amd64 libmpdec2 amd64 2.4.2-1ubuntu1 [84.1 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-minimal amd64 3.6.9-1~18.04ubuntu1 [533 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 mime-support all 3.60ubuntu1 [30.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 readline-common all 7.0-3 [52.9 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/main amd64 libreadline7 amd64 7.0-3 [124 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsqlite3-0 amd64 3.22.0-1ubuntu0.3 [498 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6-stdlib amd64 3.6.9-1~18.04ubuntu1 [1710 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 xxd amd64 2:8.0.1453-1ubuntu1.3 [49.4 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim-common all 2:8.0.1453-1ubuntu1.3 [70.6 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic/main amd64 xz-utils amd64 5.2.2-1.3 [83.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpsl5 amd64 0.19.1-5build1 [41.8 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 publicsuffix all 20180223.1310-1 [97.6 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 wget amd64 1.19.4-1ubuntu2.2 [316 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgpm2 amd64 1.20.7-5 [15.1 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3.6 amd64 3.6.9-1~18.04ubuntu1 [1414 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim-runtime all 2:8.0.1453-1ubuntu1.3 [5436 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 vim amd64 2:8.0.1453-1ubuntu1.3 [1153 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 14.1 MB in 31s (458 kB/s)
+Selecting previously unselected package libssl1.1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4046 files and directories currently installed.)
+Preparing to unpack .../00-libssl1.1_1.1.1-1ubuntu2.1~18.04.6_amd64.deb ...
+Unpacking libssl1.1:amd64 (1.1.1-1ubuntu2.1~18.04.6) ...
+Selecting previously unselected package openssl.
+Preparing to unpack .../01-openssl_1.1.1-1ubuntu2.1~18.04.6_amd64.deb ...
+Unpacking openssl (1.1.1-1ubuntu2.1~18.04.6) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../02-ca-certificates_20180409_all.deb ...
+Unpacking ca-certificates (20180409) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../03-libmagic-mgc_1%3a5.32-2ubuntu0.4_amd64.deb ...
+Unpacking libmagic-mgc (1:5.32-2ubuntu0.4) ...
+Selecting previously unselected package libmagic1:amd64.
+Preparing to unpack .../04-libmagic1_1%3a5.32-2ubuntu0.4_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.32-2ubuntu0.4) ...
+Selecting previously unselected package file.
+Preparing to unpack .../05-file_1%3a5.32-2ubuntu0.4_amd64.deb ...
+Unpacking file (1:5.32-2ubuntu0.4) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../06-libexpat1_2.2.5-3ubuntu0.2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.5-3ubuntu0.2) ...
+Selecting previously unselected package libmpdec2:amd64.
+Preparing to unpack .../07-libmpdec2_2.4.2-1ubuntu1_amd64.deb ...
+Unpacking libmpdec2:amd64 (2.4.2-1ubuntu1) ...
+Selecting previously unselected package libpython3.6-minimal:amd64.
+Preparing to unpack .../08-libpython3.6-minimal_3.6.9-1~18.04ubuntu1_amd64.deb ...
+Unpacking libpython3.6-minimal:amd64 (3.6.9-1~18.04ubuntu1) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../09-mime-support_3.60ubuntu1_all.deb ...
+Unpacking mime-support (3.60ubuntu1) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../10-readline-common_7.0-3_all.deb ...
+Unpacking readline-common (7.0-3) ...
+Selecting previously unselected package libreadline7:amd64.
+Preparing to unpack .../11-libreadline7_7.0-3_amd64.deb ...
+Unpacking libreadline7:amd64 (7.0-3) ...
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack .../12-libsqlite3-0_3.22.0-1ubuntu0.3_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.22.0-1ubuntu0.3) ...
+Selecting previously unselected package libpython3.6-stdlib:amd64.
+Preparing to unpack .../13-libpython3.6-stdlib_3.6.9-1~18.04ubuntu1_amd64.deb ...
+Unpacking libpython3.6-stdlib:amd64 (3.6.9-1~18.04ubuntu1) ...
+Selecting previously unselected package xxd.
+Preparing to unpack .../14-xxd_2%3a8.0.1453-1ubuntu1.3_amd64.deb ...
+Unpacking xxd (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../15-vim-common_2%3a8.0.1453-1ubuntu1.3_all.deb ...
+Unpacking vim-common (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../16-xz-utils_5.2.2-1.3_amd64.deb ...
+Unpacking xz-utils (5.2.2-1.3) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../17-libpsl5_0.19.1-5build1_amd64.deb ...
+Unpacking libpsl5:amd64 (0.19.1-5build1) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../18-publicsuffix_20180223.1310-1_all.deb ...
+Unpacking publicsuffix (20180223.1310-1) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../19-wget_1.19.4-1ubuntu2.2_amd64.deb ...
+Unpacking wget (1.19.4-1ubuntu2.2) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../20-libgpm2_1.20.7-5_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-5) ...
+Selecting previously unselected package libpython3.6:amd64.
+Preparing to unpack .../21-libpython3.6_3.6.9-1~18.04ubuntu1_amd64.deb ...
+Unpacking libpython3.6:amd64 (3.6.9-1~18.04ubuntu1) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../22-vim-runtime_2%3a8.0.1453-1ubuntu1.3_all.deb ...
+Adding 'diversion of /usr/share/vim/vim80/doc/help.txt to /usr/share/vim/vim80/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim80/doc/tags to /usr/share/vim/vim80/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:8.0.1453-1ubuntu1.3) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../23-vim_2%3a8.0.1453-1ubuntu1.3_amd64.deb ...
+Unpacking vim (2:8.0.1453-1ubuntu1.3) ...
+Setting up readline-common (7.0-3) ...
+Setting up libexpat1:amd64 (2.2.5-3ubuntu0.2) ...
+Setting up mime-support (3.60ubuntu1) ...
+Setting up xxd (2:8.0.1453-1ubuntu1.3) ...
+Setting up libgpm2:amd64 (1.20.7-5) ...
+Setting up libreadline7:amd64 (7.0-3) ...
+Setting up libpsl5:amd64 (0.19.1-5build1) ...
+Setting up libmagic-mgc (1:5.32-2ubuntu0.4) ...
+Setting up libmagic1:amd64 (1:5.32-2ubuntu0.4) ...
+Setting up publicsuffix (20180223.1310-1) ...
+Setting up libssl1.1:amd64 (1.1.1-1ubuntu2.1~18.04.6) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up xz-utils (5.2.2-1.3) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+Setting up openssl (1.1.1-1ubuntu2.1~18.04.6) ...
+Setting up wget (1.19.4-1ubuntu2.2) ...
+Setting up vim-common (2:8.0.1453-1ubuntu1.3) ...
+Setting up libsqlite3-0:amd64 (3.22.0-1ubuntu0.3) ...
+Setting up vim-runtime (2:8.0.1453-1ubuntu1.3) ...
+Setting up ca-certificates (20180409) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+133 added, 0 removed; done.
+Setting up libmpdec2:amd64 (2.4.2-1ubuntu1) ...
+Setting up file (1:5.32-2ubuntu0.4) ...
+Setting up libpython3.6-minimal:amd64 (3.6.9-1~18.04ubuntu1) ...
+Setting up libpython3.6-stdlib:amd64 (3.6.9-1~18.04ubuntu1) ...
+Setting up libpython3.6:amd64 (3.6.9-1~18.04ubuntu1) ...
+Setting up vim (2:8.0.1453-1ubuntu1.3) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  cron dbus dirmngr distro-info-data gir1.2-glib-2.0 gnupg gnupg-l10n
+  gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
+  iso-codes libapparmor1 libapt-inst2.0 libasn1-8-heimdal libassuan0
+  libdbus-1-3 libgirepository-1.0-1 libglib2.0-0 libglib2.0-data
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libicu60 libkrb5-26-heimdal libksba8
+  libldap-2.4-2 libldap-common libnpth0 libpython3-stdlib libroken18-heimdal
+  libsasl2-2 libsasl2-modules libsasl2-modules-db libwind0-heimdal libxml2
+  lsb-release pinentry-curses powermgmt-base python-apt-common python3
+  python3-apt python3-dbus python3-gi python3-minimal
+  python3-software-properties python3.6 python3.6-minimal shared-mime-info ucf
+  unattended-upgrades xdg-user-dirs
+Suggested packages:
+  anacron logrotate checksecurity exim4 | postfix | mail-transport-agent
+  default-dbus-session-bus | dbus-session-bus dbus-user-session libpam-systemd
+  pinentry-gnome3 tor parcimonie xloadimage scdaemon isoquery
+  libsasl2-modules-gssapi-mit | libsasl2-modules-gssapi-heimdal
+  libsasl2-modules-ldap libsasl2-modules-otp libsasl2-modules-sql lsb
+  pinentry-doc python3-doc python3-tk python3-venv python3-apt-dbg
+  python-apt-doc python-dbus-doc python3-dbus-dbg python3.6-venv python3.6-doc
+  binutils binfmt-support bsd-mailx default-mta | mail-transport-agent
+  needrestart
+The following NEW packages will be installed:
+  cron dbus dirmngr distro-info-data gir1.2-glib-2.0 gnupg gnupg-l10n
+  gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf gpgsm
+  iso-codes libapparmor1 libapt-inst2.0 libasn1-8-heimdal libassuan0
+  libdbus-1-3 libgirepository-1.0-1 libglib2.0-0 libglib2.0-data
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libicu60 libkrb5-26-heimdal libksba8
+  libldap-2.4-2 libldap-common libnpth0 libpython3-stdlib libroken18-heimdal
+  libsasl2-2 libsasl2-modules libsasl2-modules-db libwind0-heimdal libxml2
+  lsb-release pinentry-curses powermgmt-base python-apt-common python3
+  python3-apt python3-dbus python3-gi python3-minimal
+  python3-software-properties python3.6 python3.6-minimal shared-mime-info
+  software-properties-common ucf unattended-upgrades xdg-user-dirs
+0 upgraded, 58 newly installed, 0 to remove and 4 not upgraded.
+Need to get 19.3 MB of archives.
+After this operation, 85.7 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 cron amd64 3.0pl1-128.1ubuntu1 [68.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6-minimal amd64 3.6.9-1~18.04ubuntu1 [1609 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-minimal amd64 3.6.7-1~18.04 [23.7 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3.6 amd64 3.6.9-1~18.04ubuntu1 [203 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpython3-stdlib amd64 3.6.7-1~18.04 [7240 B]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3 amd64 3.6.7-1~18.04 [47.2 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libapparmor1 amd64 2.12-4ubuntu5.1 [31.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdbus-1-3 amd64 1.12.2-1ubuntu1.1 [175 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dbus amd64 1.12.2-1ubuntu1.1 [150 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 distro-info-data all 0.37ubuntu0.7 [4676 B]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libglib2.0-0 amd64 2.56.4-0ubuntu0.18.04.6 [1171 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgirepository-1.0-1 amd64 1.56.1-1 [82.0 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/main amd64 gir1.2-glib-2.0 amd64 1.56.1-1 [131 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libapt-inst2.0 amd64 1.6.12ubuntu0.1 [54.4 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libglib2.0-data all 2.56.4-0ubuntu0.18.04.6 [4540 B]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libicu60 amd64 60.2-3ubuntu3.1 [8054 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxml2 amd64 2.9.4+dfsg1-6.1ubuntu1.3 [663 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic/main amd64 lsb-release all 9.20170808ubuntu1 [11.0 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 python3-dbus amd64 1.2.6-1 [89.9 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-gi amd64 3.26.1-2ubuntu1 [153 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic/main amd64 shared-mime-info amd64 1.9-2 [426 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic/main amd64 ucf all 3.0038 [50.5 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic/main amd64 xdg-user-dirs amd64 0.17-1ubuntu1 [48.0 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic/main amd64 iso-codes all 3.79-1 [2565 kB]
+Get:25 http://archive.ubuntu.com/ubuntu bionic/main amd64 powermgmt-base all 1.33 [8660 B]
+Get:26 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-apt-common all 1.6.5ubuntu0.2 [17.0 kB]
+Get:27 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-apt amd64 1.6.5ubuntu0.2 [149 kB]
+Get:28 http://archive.ubuntu.com/ubuntu bionic/main amd64 libassuan0 amd64 2.5.1-2 [35.0 kB]
+Get:29 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpgconf amd64 2.2.4-1ubuntu1.2 [123 kB]
+Get:30 http://archive.ubuntu.com/ubuntu bionic/main amd64 libksba8 amd64 1.3.5-2 [92.6 kB]
+Get:31 http://archive.ubuntu.com/ubuntu bionic/main amd64 libroken18-heimdal amd64 7.5.0+dfsg-1 [41.3 kB]
+Get:32 http://archive.ubuntu.com/ubuntu bionic/main amd64 libasn1-8-heimdal amd64 7.5.0+dfsg-1 [175 kB]
+Get:33 http://archive.ubuntu.com/ubuntu bionic/main amd64 libheimbase1-heimdal amd64 7.5.0+dfsg-1 [29.3 kB]
+Get:34 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhcrypto4-heimdal amd64 7.5.0+dfsg-1 [85.9 kB]
+Get:35 http://archive.ubuntu.com/ubuntu bionic/main amd64 libwind0-heimdal amd64 7.5.0+dfsg-1 [47.8 kB]
+Get:36 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhx509-5-heimdal amd64 7.5.0+dfsg-1 [107 kB]
+Get:37 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkrb5-26-heimdal amd64 7.5.0+dfsg-1 [206 kB]
+Get:38 http://archive.ubuntu.com/ubuntu bionic/main amd64 libheimntlm0-heimdal amd64 7.5.0+dfsg-1 [14.8 kB]
+Get:39 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgssapi3-heimdal amd64 7.5.0+dfsg-1 [96.5 kB]
+Get:40 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3ubuntu2.1 [14.8 kB]
+Get:41 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3ubuntu2.1 [49.2 kB]
+Get:42 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libldap-common all 2.4.45+dfsg-1ubuntu1.5 [16.9 kB]
+Get:43 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libldap-2.4-2 amd64 2.4.45+dfsg-1ubuntu1.5 [155 kB]
+Get:44 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnpth0 amd64 1.5-3 [7668 B]
+Get:45 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dirmngr amd64 2.2.4-1ubuntu1.2 [316 kB]
+Get:46 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg-l10n all 2.2.4-1ubuntu1.2 [49.6 kB]
+Get:47 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg-utils amd64 2.2.4-1ubuntu1.2 [127 kB]
+Get:48 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg amd64 2.2.4-1ubuntu1.2 [467 kB]
+Get:49 http://archive.ubuntu.com/ubuntu bionic/main amd64 pinentry-curses amd64 1.1.0-1 [35.8 kB]
+Get:50 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-agent amd64 2.2.4-1ubuntu1.2 [227 kB]
+Get:51 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-wks-client amd64 2.2.4-1ubuntu1.2 [91.9 kB]
+Get:52 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-wks-server amd64 2.2.4-1ubuntu1.2 [84.9 kB]
+Get:53 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpgsm amd64 2.2.4-1ubuntu1.2 [215 kB]
+Get:54 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg amd64 2.2.4-1ubuntu1.2 [249 kB]
+Get:55 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsasl2-modules amd64 2.1.27~101-g0780600+dfsg-3ubuntu2.1 [48.8 kB]
+Get:56 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-software-properties all 0.96.24.32.12 [23.6 kB]
+Get:57 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 software-properties-common all 0.96.24.32.12 [10.0 kB]
+Get:58 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 unattended-upgrades all 1.1ubuntu1.18.04.14 [41.7 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 19.3 MB in 14s (1415 kB/s)
+Selecting previously unselected package cron.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6966 files and directories currently installed.)
+Preparing to unpack .../cron_3.0pl1-128.1ubuntu1_amd64.deb ...
+Unpacking cron (3.0pl1-128.1ubuntu1) ...
+Selecting previously unselected package python3.6-minimal.
+Preparing to unpack .../python3.6-minimal_3.6.9-1~18.04ubuntu1_amd64.deb ...
+Unpacking python3.6-minimal (3.6.9-1~18.04ubuntu1) ...
+Setting up python3.6-minimal (3.6.9-1~18.04ubuntu1) ...
+Selecting previously unselected package python3-minimal.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7015 files and directories currently installed.)
+Preparing to unpack .../python3-minimal_3.6.7-1~18.04_amd64.deb ...
+Unpacking python3-minimal (3.6.7-1~18.04) ...
+Selecting previously unselected package python3.6.
+Preparing to unpack .../python3.6_3.6.9-1~18.04ubuntu1_amd64.deb ...
+Unpacking python3.6 (3.6.9-1~18.04ubuntu1) ...
+Selecting previously unselected package libpython3-stdlib:amd64.
+Preparing to unpack .../libpython3-stdlib_3.6.7-1~18.04_amd64.deb ...
+Unpacking libpython3-stdlib:amd64 (3.6.7-1~18.04) ...
+Setting up python3-minimal (3.6.7-1~18.04) ...
+Selecting previously unselected package python3.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7063 files and directories currently installed.)
+Preparing to unpack .../00-python3_3.6.7-1~18.04_amd64.deb ...
+Unpacking python3 (3.6.7-1~18.04) ...
+Selecting previously unselected package libapparmor1:amd64.
+Preparing to unpack .../01-libapparmor1_2.12-4ubuntu5.1_amd64.deb ...
+Unpacking libapparmor1:amd64 (2.12-4ubuntu5.1) ...
+Selecting previously unselected package libdbus-1-3:amd64.
+Preparing to unpack .../02-libdbus-1-3_1.12.2-1ubuntu1.1_amd64.deb ...
+Unpacking libdbus-1-3:amd64 (1.12.2-1ubuntu1.1) ...
+Selecting previously unselected package dbus.
+Preparing to unpack .../03-dbus_1.12.2-1ubuntu1.1_amd64.deb ...
+Unpacking dbus (1.12.2-1ubuntu1.1) ...
+Selecting previously unselected package distro-info-data.
+Preparing to unpack .../04-distro-info-data_0.37ubuntu0.7_all.deb ...
+Unpacking distro-info-data (0.37ubuntu0.7) ...
+Selecting previously unselected package libglib2.0-0:amd64.
+Preparing to unpack .../05-libglib2.0-0_2.56.4-0ubuntu0.18.04.6_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.56.4-0ubuntu0.18.04.6) ...
+Selecting previously unselected package libgirepository-1.0-1:amd64.
+Preparing to unpack .../06-libgirepository-1.0-1_1.56.1-1_amd64.deb ...
+Unpacking libgirepository-1.0-1:amd64 (1.56.1-1) ...
+Selecting previously unselected package gir1.2-glib-2.0:amd64.
+Preparing to unpack .../07-gir1.2-glib-2.0_1.56.1-1_amd64.deb ...
+Unpacking gir1.2-glib-2.0:amd64 (1.56.1-1) ...
+Selecting previously unselected package libapt-inst2.0:amd64.
+Preparing to unpack .../08-libapt-inst2.0_1.6.12ubuntu0.1_amd64.deb ...
+Unpacking libapt-inst2.0:amd64 (1.6.12ubuntu0.1) ...
+Selecting previously unselected package libglib2.0-data.
+Preparing to unpack .../09-libglib2.0-data_2.56.4-0ubuntu0.18.04.6_all.deb ...
+Unpacking libglib2.0-data (2.56.4-0ubuntu0.18.04.6) ...
+Selecting previously unselected package libicu60:amd64.
+Preparing to unpack .../10-libicu60_60.2-3ubuntu3.1_amd64.deb ...
+Unpacking libicu60:amd64 (60.2-3ubuntu3.1) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../11-libxml2_2.9.4+dfsg1-6.1ubuntu1.3_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.4+dfsg1-6.1ubuntu1.3) ...
+Selecting previously unselected package lsb-release.
+Preparing to unpack .../12-lsb-release_9.20170808ubuntu1_all.deb ...
+Unpacking lsb-release (9.20170808ubuntu1) ...
+Selecting previously unselected package python3-dbus.
+Preparing to unpack .../13-python3-dbus_1.2.6-1_amd64.deb ...
+Unpacking python3-dbus (1.2.6-1) ...
+Selecting previously unselected package python3-gi.
+Preparing to unpack .../14-python3-gi_3.26.1-2ubuntu1_amd64.deb ...
+Unpacking python3-gi (3.26.1-2ubuntu1) ...
+Selecting previously unselected package shared-mime-info.
+Preparing to unpack .../15-shared-mime-info_1.9-2_amd64.deb ...
+Unpacking shared-mime-info (1.9-2) ...
+Selecting previously unselected package ucf.
+Preparing to unpack .../16-ucf_3.0038_all.deb ...
+Moving old data out of the way
+Unpacking ucf (3.0038) ...
+Selecting previously unselected package xdg-user-dirs.
+Preparing to unpack .../17-xdg-user-dirs_0.17-1ubuntu1_amd64.deb ...
+Unpacking xdg-user-dirs (0.17-1ubuntu1) ...
+Selecting previously unselected package iso-codes.
+Preparing to unpack .../18-iso-codes_3.79-1_all.deb ...
+Unpacking iso-codes (3.79-1) ...
+Selecting previously unselected package powermgmt-base.
+Preparing to unpack .../19-powermgmt-base_1.33_all.deb ...
+Unpacking powermgmt-base (1.33) ...
+Selecting previously unselected package python-apt-common.
+Preparing to unpack .../20-python-apt-common_1.6.5ubuntu0.2_all.deb ...
+Unpacking python-apt-common (1.6.5ubuntu0.2) ...
+Selecting previously unselected package python3-apt.
+Preparing to unpack .../21-python3-apt_1.6.5ubuntu0.2_amd64.deb ...
+Unpacking python3-apt (1.6.5ubuntu0.2) ...
+Selecting previously unselected package libassuan0:amd64.
+Preparing to unpack .../22-libassuan0_2.5.1-2_amd64.deb ...
+Unpacking libassuan0:amd64 (2.5.1-2) ...
+Selecting previously unselected package gpgconf.
+Preparing to unpack .../23-gpgconf_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpgconf (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package libksba8:amd64.
+Preparing to unpack .../24-libksba8_1.3.5-2_amd64.deb ...
+Unpacking libksba8:amd64 (1.3.5-2) ...
+Selecting previously unselected package libroken18-heimdal:amd64.
+Preparing to unpack .../25-libroken18-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../26-libasn1-8-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../27-libheimbase1-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../28-libhcrypto4-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../29-libwind0-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../30-libhx509-5-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../31-libkrb5-26-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../32-libheimntlm0-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../33-libgssapi3-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../34-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3ubuntu2.1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../35-libsasl2-2_2.1.27~101-g0780600+dfsg-3ubuntu2.1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../36-libldap-common_2.4.45+dfsg-1ubuntu1.5_all.deb ...
+Unpacking libldap-common (2.4.45+dfsg-1ubuntu1.5) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../37-libldap-2.4-2_2.4.45+dfsg-1ubuntu1.5_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.45+dfsg-1ubuntu1.5) ...
+Selecting previously unselected package libnpth0:amd64.
+Preparing to unpack .../38-libnpth0_1.5-3_amd64.deb ...
+Unpacking libnpth0:amd64 (1.5-3) ...
+Selecting previously unselected package dirmngr.
+Preparing to unpack .../39-dirmngr_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking dirmngr (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack .../40-gnupg-l10n_2.2.4-1ubuntu1.2_all.deb ...
+Unpacking gnupg-l10n (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack .../41-gnupg-utils_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gnupg-utils (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gpg.
+Preparing to unpack .../42-gpg_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpg (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack .../43-pinentry-curses_1.1.0-1_amd64.deb ...
+Unpacking pinentry-curses (1.1.0-1) ...
+Selecting previously unselected package gpg-agent.
+Preparing to unpack .../44-gpg-agent_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpg-agent (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack .../45-gpg-wks-client_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpg-wks-client (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gpg-wks-server.
+Preparing to unpack .../46-gpg-wks-server_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpg-wks-server (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gpgsm.
+Preparing to unpack .../47-gpgsm_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gpgsm (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package gnupg.
+Preparing to unpack .../48-gnupg_2.2.4-1ubuntu1.2_amd64.deb ...
+Unpacking gnupg (2.2.4-1ubuntu1.2) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../49-libsasl2-modules_2.1.27~101-g0780600+dfsg-3ubuntu2.1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Selecting previously unselected package python3-software-properties.
+Preparing to unpack .../50-python3-software-properties_0.96.24.32.12_all.deb ...
+Unpacking python3-software-properties (0.96.24.32.12) ...
+Selecting previously unselected package software-properties-common.
+Preparing to unpack .../51-software-properties-common_0.96.24.32.12_all.deb ...
+Unpacking software-properties-common (0.96.24.32.12) ...
+Selecting previously unselected package unattended-upgrades.
+Preparing to unpack .../52-unattended-upgrades_1.1ubuntu1.18.04.14_all.deb ...
+Unpacking unattended-upgrades (1.1ubuntu1.18.04.14) ...
+Setting up python-apt-common (1.6.5ubuntu0.2) ...
+Setting up libnpth0:amd64 (1.5-3) ...
+Setting up libpython3-stdlib:amd64 (3.6.7-1~18.04) ...
+Setting up libapt-inst2.0:amd64 (1.6.12ubuntu0.1) ...
+Setting up powermgmt-base (1.33) ...
+Setting up libicu60:amd64 (60.2-3ubuntu3.1) ...
+Setting up python3.6 (3.6.9-1~18.04ubuntu1) ...
+Setting up python3 (3.6.7-1~18.04) ...
+running python rtupdate hooks for python3.6...
+running python post-rtupdate hooks for python3.6...
+Setting up iso-codes (3.79-1) ...
+Setting up libldap-common (2.4.45+dfsg-1ubuntu1.5) ...
+Setting up libglib2.0-0:amd64 (2.56.4-0ubuntu0.18.04.6) ...
+No schema files found: doing nothing.
+Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Setting up distro-info-data (0.37ubuntu0.7) ...
+Setting up libroken18-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libksba8:amd64 (1.3.5-2) ...
+Setting up lsb-release (9.20170808ubuntu1) ...
+Setting up ucf (3.0038) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libgirepository-1.0-1:amd64 (1.56.1-1) ...
+Setting up libxml2:amd64 (2.9.4+dfsg1-6.1ubuntu1.3) ...
+Setting up gnupg-l10n (2.2.4-1ubuntu1.2) ...
+Setting up gir1.2-glib-2.0:amd64 (1.56.1-1) ...
+Setting up libglib2.0-data (2.56.4-0ubuntu0.18.04.6) ...
+Setting up libapparmor1:amd64 (2.12-4ubuntu5.1) ...
+Setting up libheimbase1-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up shared-mime-info (1.9-2) ...
+Setting up libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2.1) ...
+Setting up cron (3.0pl1-128.1ubuntu1) ...
+Adding group `crontab' (GID 101) ...
+Done.
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up libassuan0:amd64 (2.5.1-2) ...
+Setting up xdg-user-dirs (0.17-1ubuntu1) ...
+Setting up libdbus-1-3:amd64 (1.12.2-1ubuntu1.1) ...
+Setting up python3-apt (1.6.5ubuntu0.2) ...
+Setting up python3-dbus (1.2.6-1) ...
+Setting up libwind0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libasn1-8-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up gpgconf (2.2.4-1ubuntu1.2) ...
+Setting up libhcrypto4-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up python3-gi (3.26.1-2ubuntu1) ...
+Setting up libhx509-5-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up gpgsm (2.2.4-1ubuntu1.2) ...
+Setting up gnupg-utils (2.2.4-1ubuntu1.2) ...
+Setting up unattended-upgrades (1.1ubuntu1.18.04.14) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/apt/apt.conf.d/20auto-upgrades with new version
+
+Creating config file /etc/apt/apt.conf.d/50unattended-upgrades with new version
+Setting up pinentry-curses (1.1.0-1) ...
+Setting up libkrb5-26-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up dbus (1.12.2-1ubuntu1.1) ...
+Setting up libheimntlm0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up gpg (2.2.4-1ubuntu1.2) ...
+Setting up gpg-agent (2.2.4-1ubuntu1.2) ...
+Setting up gpg-wks-server (2.2.4-1ubuntu1.2) ...
+Setting up python3-software-properties (0.96.24.32.12) ...
+Setting up libgssapi3-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up software-properties-common (0.96.24.32.12) ...
+Setting up libldap-2.4-2:amd64 (2.4.45+dfsg-1ubuntu1.5) ...
+Setting up dirmngr (2.2.4-1ubuntu1.2) ...
+Setting up gpg-wks-client (2.2.4-1ubuntu1.2) ...
+Setting up gnupg (2.2.4-1ubuntu1.2) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for dbus (1.12.2-1ubuntu1.1) ...
+Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Get:2 http://ppa.launchpad.net/ondrej/php/ubuntu bionic InRelease [20.8 kB]
+Hit:3 http://archive.ubuntu.com/ubuntu bionic InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
+Get:6 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 Packages [62.4 kB]
+Fetched 83.2 kB in 3s (29.5 kB/s)
+Reading package lists...
+Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease
+Hit:3 http://ppa.launchpad.net/ondrej/php/ubuntu bionic InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  dmsetup fontconfig-config fonts-dejavu-core libargon2-0 libbsd0 libcap2
+  libcryptsetup12 libdevmapper1.02.1 libedit2 libfontconfig1 libfreetype6
+  libgd3 libidn11 libip4tc0 libjbig0 libjpeg-turbo8 libjpeg8 libjson-c3
+  libkmod2 libnss-systemd libonig4 libpam-systemd libpcre2-8-0 libpng16-16
+  libsodium23 libsystemd0 libtiff5 libwebp6 libx11-6 libx11-data libxau6
+  libxcb1 libxdmcp6 libxpm4 libxslt1.1 multiarch-support networkd-dispatcher
+  php-common php7.4-cli php7.4-json php7.4-opcache php7.4-readline psmisc
+  systemd systemd-sysv tzdata
+Suggested packages:
+  libgd-tools iw | wireless-tools php-pear systemd-container policykit-1
+The following NEW packages will be installed:
+  dmsetup fontconfig-config fonts-dejavu-core libargon2-0 libbsd0 libcap2
+  libcryptsetup12 libdevmapper1.02.1 libedit2 libfontconfig1 libfreetype6
+  libgd3 libidn11 libip4tc0 libjbig0 libjpeg-turbo8 libjpeg8 libjson-c3
+  libkmod2 libnss-systemd libonig4 libpam-systemd libpcre2-8-0 libpng16-16
+  libsodium23 libtiff5 libwebp6 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6
+  libxpm4 libxslt1.1 multiarch-support networkd-dispatcher php-common php7.4
+  php7.4-cli php7.4-common php7.4-fpm php7.4-gd php7.4-json php7.4-mbstring
+  php7.4-mysql php7.4-opcache php7.4-readline php7.4-xml psmisc systemd
+  systemd-sysv tzdata
+The following packages will be upgraded:
+  libsystemd0
+1 upgraded, 52 newly installed, 0 to remove and 8 not upgraded.
+Need to get 12.7 MB of archives.
+After this operation, 52.0 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libsystemd0 amd64 237-3ubuntu10.41 [207 kB]
+Get:2 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 libgd3 amd64 2.3.0-2+ubuntu18.04.1+deb.sury.org+1 [136 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libcap2 amd64 1:2.25-1.2 [13.0 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libargon2-0 amd64 0~20161029-1.1 [19.9 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdevmapper1.02.1 amd64 2:1.02.145-4.1ubuntu3.18.04.3 [127 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjson-c3 amd64 0.12.1-1.3ubuntu0.3 [21.7 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcryptsetup12 amd64 2:2.0.2-1ubuntu1.1 [134 kB]
+Get:8 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 libpcre2-8-0 amd64 10.34-7+ubuntu18.04.1+deb.sury.org+1 [196 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libidn11 amd64 1.33-2.1ubuntu1.2 [46.6 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 libip4tc0 amd64 1.6.1-2ubuntu2 [19.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libkmod2 amd64 24-1ubuntu3.4 [40.1 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd amd64 237-3ubuntu10.41 [2914 kB]
+Get:13 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 libsodium23 amd64 1.0.18-1+ubuntu18.04.1+deb.sury.org+1 [150 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 systemd-sysv amd64 237-3ubuntu10.41 [14.7 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic/main amd64 multiarch-support amd64 2.27-3ubuntu1 [6916 B]
+Get:16 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxau6 amd64 1:1.0.8-1 [8376 B]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libjpeg-turbo8 amd64 1.5.2-0ubuntu5.18.04.3 [110 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dmsetup amd64 2:1.02.145-4.1ubuntu3.18.04.3 [74.4 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libbsd0 amd64 0.8.7-1ubuntu0.1 [41.6 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnss-systemd amd64 237-3ubuntu10.41 [105 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpam-systemd amd64 237-3ubuntu10.41 [107 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 networkd-dispatcher all 1.7-0ubuntu3.3 [13.3 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 tzdata all 2020a-0ubuntu0.18.04 [190 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic/main amd64 libedit2 amd64 3.1-20170329-1 [76.9 kB]
+Get:25 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libpng16-16 amd64 1.6.34-1ubuntu0.18.04.2 [176 kB]
+Get:26 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxdmcp6 amd64 1:1.1.2-3 [10.7 kB]
+Get:27 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxcb1 amd64 1.13-2~ubuntu18.04 [45.5 kB]
+Get:28 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-data all 2:1.6.4-3ubuntu0.2 [113 kB]
+Get:29 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libx11-6 amd64 2:1.6.4-3ubuntu0.2 [569 kB]
+Get:30 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 psmisc amd64 23.1-1ubuntu0.1 [52.5 kB]
+Get:31 http://archive.ubuntu.com/ubuntu bionic/main amd64 fonts-dejavu-core all 2.37-1 [1041 kB]
+Get:32 http://archive.ubuntu.com/ubuntu bionic/main amd64 fontconfig-config all 2.12.6-0ubuntu2 [55.8 kB]
+Get:33 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfreetype6 amd64 2.8.1-2ubuntu2 [335 kB]
+Get:34 http://archive.ubuntu.com/ubuntu bionic/main amd64 libfontconfig1 amd64 2.12.6-0ubuntu2 [137 kB]
+Get:35 http://archive.ubuntu.com/ubuntu bionic/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2194 B]
+Get:36 http://archive.ubuntu.com/ubuntu bionic/main amd64 libjbig0 amd64 2.1-3.1build1 [26.7 kB]
+Get:37 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libtiff5 amd64 4.0.9-5ubuntu0.3 [153 kB]
+Get:38 http://archive.ubuntu.com/ubuntu bionic/main amd64 libwebp6 amd64 0.6.1-2 [185 kB]
+Get:39 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxpm4 amd64 1:3.5.12-1 [34.0 kB]
+Get:40 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libonig4 amd64 6.7.0-1 [119 kB]
+Get:41 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libxslt1.1 amd64 1.1.29-5ubuntu0.2 [150 kB]
+Get:42 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php-common all 2:76+ubuntu18.04.1+deb.sury.org+9 [15.7 kB]
+Get:43 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-common amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [1000 kB]
+Get:44 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-json amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [18.6 kB]
+Get:45 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-opcache amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [196 kB]
+Get:46 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-readline amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [12.2 kB]
+Get:47 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-cli amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [1393 kB]
+Get:48 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-fpm amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [1404 kB]
+Get:49 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4 all 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [38.7 kB]
+Get:50 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-gd amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [27.4 kB]
+Get:51 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-mbstring amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [397 kB]
+Get:52 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-mysql amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [118 kB]
+Get:53 http://ppa.launchpad.net/ondrej/php/ubuntu bionic/main amd64 php7.4-xml amd64 7.4.6-1+ubuntu18.04.1+deb.sury.org+1 [95.8 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 12.7 MB in 34s (378 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9211 files and directories currently installed.)
+Preparing to unpack .../libsystemd0_237-3ubuntu10.41_amd64.deb ...
+Unpacking libsystemd0:amd64 (237-3ubuntu10.41) over (237-3ubuntu10.39) ...
+Setting up libsystemd0:amd64 (237-3ubuntu10.41) ...
+Selecting previously unselected package libcap2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9211 files and directories currently installed.)
+Preparing to unpack .../0-libcap2_1%3a2.25-1.2_amd64.deb ...
+Unpacking libcap2:amd64 (1:2.25-1.2) ...
+Selecting previously unselected package libargon2-0:amd64.
+Preparing to unpack .../1-libargon2-0_0~20161029-1.1_amd64.deb ...
+Unpacking libargon2-0:amd64 (0~20161029-1.1) ...
+Selecting previously unselected package libdevmapper1.02.1:amd64.
+Preparing to unpack .../2-libdevmapper1.02.1_2%3a1.02.145-4.1ubuntu3.18.04.3_amd64.deb ...
+Unpacking libdevmapper1.02.1:amd64 (2:1.02.145-4.1ubuntu3.18.04.3) ...
+Selecting previously unselected package libjson-c3:amd64.
+Preparing to unpack .../3-libjson-c3_0.12.1-1.3ubuntu0.3_amd64.deb ...
+Unpacking libjson-c3:amd64 (0.12.1-1.3ubuntu0.3) ...
+Selecting previously unselected package libcryptsetup12:amd64.
+Preparing to unpack .../4-libcryptsetup12_2%3a2.0.2-1ubuntu1.1_amd64.deb ...
+Unpacking libcryptsetup12:amd64 (2:2.0.2-1ubuntu1.1) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../5-libidn11_1.33-2.1ubuntu1.2_amd64.deb ...
+Unpacking libidn11:amd64 (1.33-2.1ubuntu1.2) ...
+Selecting previously unselected package libip4tc0:amd64.
+Preparing to unpack .../6-libip4tc0_1.6.1-2ubuntu2_amd64.deb ...
+Unpacking libip4tc0:amd64 (1.6.1-2ubuntu2) ...
+Selecting previously unselected package libkmod2:amd64.
+Preparing to unpack .../7-libkmod2_24-1ubuntu3.4_amd64.deb ...
+Unpacking libkmod2:amd64 (24-1ubuntu3.4) ...
+Setting up libcap2:amd64 (1:2.25-1.2) ...
+Setting up libargon2-0:amd64 (0~20161029-1.1) ...
+Setting up libdevmapper1.02.1:amd64 (2:1.02.145-4.1ubuntu3.18.04.3) ...
+Setting up libjson-c3:amd64 (0.12.1-1.3ubuntu0.3) ...
+Setting up libcryptsetup12:amd64 (2:2.0.2-1ubuntu1.1) ...
+Setting up libidn11:amd64 (1.33-2.1ubuntu1.2) ...
+Setting up libip4tc0:amd64 (1.6.1-2ubuntu2) ...
+Selecting previously unselected package systemd.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9252 files and directories currently installed.)
+Preparing to unpack .../systemd_237-3ubuntu10.41_amd64.deb ...
+Unpacking systemd (237-3ubuntu10.41) ...
+Setting up libkmod2:amd64 (24-1ubuntu3.4) ...
+Setting up systemd (237-3ubuntu10.41) ...
+Created symlink /etc/systemd/system/getty.target.wants/getty@tty1.service → /lib/systemd/system/getty@.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/remote-fs.target → /lib/systemd/system/remote-fs.target.
+Created symlink /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service → /lib/systemd/system/systemd-timesyncd.service.
+Created symlink /etc/systemd/system/dbus-org.freedesktop.resolve1.service → /lib/systemd/system/systemd-resolved.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/systemd-resolved.service → /lib/systemd/system/systemd-resolved.service.
+ln: failed to create symbolic link '/etc/resolv.conf': Device or resource busy
+Created symlink /etc/systemd/system/multi-user.target.wants/ondemand.service → /lib/systemd/system/ondemand.service.
+Initializing machine ID from D-Bus machine ID.
+Selecting previously unselected package systemd-sysv.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9950 files and directories currently installed.)
+Preparing to unpack .../systemd-sysv_237-3ubuntu10.41_amd64.deb ...
+Unpacking systemd-sysv (237-3ubuntu10.41) ...
+Selecting previously unselected package multiarch-support.
+Preparing to unpack .../multiarch-support_2.27-3ubuntu1_amd64.deb ...
+Unpacking multiarch-support (2.27-3ubuntu1) ...
+Setting up multiarch-support (2.27-3ubuntu1) ...
+Selecting previously unselected package libxau6:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9970 files and directories currently installed.)
+Preparing to unpack .../00-libxau6_1%3a1.0.8-1_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.8-1) ...
+Selecting previously unselected package libjpeg-turbo8:amd64.
+Preparing to unpack .../01-libjpeg-turbo8_1.5.2-0ubuntu5.18.04.3_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.3) ...
+Selecting previously unselected package dmsetup.
+Preparing to unpack .../02-dmsetup_2%3a1.02.145-4.1ubuntu3.18.04.3_amd64.deb ...
+Unpacking dmsetup (2:1.02.145-4.1ubuntu3.18.04.3) ...
+Selecting previously unselected package libbsd0:amd64.
+Preparing to unpack .../03-libbsd0_0.8.7-1ubuntu0.1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.8.7-1ubuntu0.1) ...
+Selecting previously unselected package libnss-systemd:amd64.
+Preparing to unpack .../04-libnss-systemd_237-3ubuntu10.41_amd64.deb ...
+Unpacking libnss-systemd:amd64 (237-3ubuntu10.41) ...
+Selecting previously unselected package libpam-systemd:amd64.
+Preparing to unpack .../05-libpam-systemd_237-3ubuntu10.41_amd64.deb ...
+Unpacking libpam-systemd:amd64 (237-3ubuntu10.41) ...
+Selecting previously unselected package networkd-dispatcher.
+Preparing to unpack .../06-networkd-dispatcher_1.7-0ubuntu3.3_all.deb ...
+Unpacking networkd-dispatcher (1.7-0ubuntu3.3) ...
+Selecting previously unselected package tzdata.
+Preparing to unpack .../07-tzdata_2020a-0ubuntu0.18.04_all.deb ...
+Unpacking tzdata (2020a-0ubuntu0.18.04) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../08-libedit2_3.1-20170329-1_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20170329-1) ...
+Selecting previously unselected package libpng16-16:amd64.
+Preparing to unpack .../09-libpng16-16_1.6.34-1ubuntu0.18.04.2_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.34-1ubuntu0.18.04.2) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../10-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../11-libxcb1_1.13-2~ubuntu18.04_amd64.deb ...
+Unpacking libxcb1:amd64 (1.13-2~ubuntu18.04) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../12-libx11-data_2%3a1.6.4-3ubuntu0.2_all.deb ...
+Unpacking libx11-data (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../13-libx11-6_2%3a1.6.4-3ubuntu0.2_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.6.4-3ubuntu0.2) ...
+Selecting previously unselected package psmisc.
+Preparing to unpack .../14-psmisc_23.1-1ubuntu0.1_amd64.deb ...
+Unpacking psmisc (23.1-1ubuntu0.1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../15-fonts-dejavu-core_2.37-1_all.deb ...
+Unpacking fonts-dejavu-core (2.37-1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../16-fontconfig-config_2.12.6-0ubuntu2_all.deb ...
+Unpacking fontconfig-config (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libfreetype6:amd64.
+Preparing to unpack .../17-libfreetype6_2.8.1-2ubuntu2_amd64.deb ...
+Unpacking libfreetype6:amd64 (2.8.1-2ubuntu2) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../18-libfontconfig1_2.12.6-0ubuntu2_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../19-libjpeg8_8c-2ubuntu8_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../20-libjbig0_2.1-3.1build1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1build1) ...
+Selecting previously unselected package libtiff5:amd64.
+Preparing to unpack .../21-libtiff5_4.0.9-5ubuntu0.3_amd64.deb ...
+Unpacking libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Selecting previously unselected package libwebp6:amd64.
+Preparing to unpack .../22-libwebp6_0.6.1-2_amd64.deb ...
+Unpacking libwebp6:amd64 (0.6.1-2) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../23-libxpm4_1%3a3.5.12-1_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1) ...
+Selecting previously unselected package libgd3:amd64.
+Preparing to unpack .../24-libgd3_2.3.0-2+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libgd3:amd64 (2.3.0-2+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libonig4:amd64.
+Preparing to unpack .../25-libonig4_6.7.0-1_amd64.deb ...
+Unpacking libonig4:amd64 (6.7.0-1) ...
+Selecting previously unselected package libpcre2-8-0:amd64.
+Preparing to unpack .../26-libpcre2-8-0_10.34-7+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libpcre2-8-0:amd64 (10.34-7+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libsodium23:amd64.
+Preparing to unpack .../27-libsodium23_1.0.18-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking libsodium23:amd64 (1.0.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../28-libxslt1.1_1.1.29-5ubuntu0.2_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.29-5ubuntu0.2) ...
+Selecting previously unselected package php-common.
+Preparing to unpack .../29-php-common_2%3a76+ubuntu18.04.1+deb.sury.org+9_all.deb ...
+Unpacking php-common (2:76+ubuntu18.04.1+deb.sury.org+9) ...
+Selecting previously unselected package php7.4-common.
+Preparing to unpack .../30-php7.4-common_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-common (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-json.
+Preparing to unpack .../31-php7.4-json_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-json (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-opcache.
+Preparing to unpack .../32-php7.4-opcache_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-opcache (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-readline.
+Preparing to unpack .../33-php7.4-readline_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-readline (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-cli.
+Preparing to unpack .../34-php7.4-cli_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-cli (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-fpm.
+Preparing to unpack .../35-php7.4-fpm_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-fpm (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4.
+Preparing to unpack .../36-php7.4_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_all.deb ...
+Unpacking php7.4 (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-gd.
+Preparing to unpack .../37-php7.4-gd_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-gd (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-mbstring.
+Preparing to unpack .../38-php7.4-mbstring_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-mbstring (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-mysql.
+Preparing to unpack .../39-php7.4-mysql_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-mysql (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Selecting previously unselected package php7.4-xml.
+Preparing to unpack .../40-php7.4-xml_7.4.6-1+ubuntu18.04.1+deb.sury.org+1_amd64.deb ...
+Unpacking php7.4-xml (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up libedit2:amd64 (3.1-20170329-1) ...
+Setting up libnss-systemd:amd64 (237-3ubuntu10.41) ...
+First installation detected...
+Checking NSS setup...
+Setting up psmisc (23.1-1ubuntu0.1) ...
+Setting up libpng16-16:amd64 (1.6.34-1ubuntu0.18.04.2) ...
+Setting up libjbig0:amd64 (2.1-3.1build1) ...
+Setting up fonts-dejavu-core (2.37-1) ...
+Setting up tzdata (2020a-0ubuntu0.18.04) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Configuring tzdata
+------------------
+
+Please select the geographic area in which you live. Subsequent configuration
+questions will narrow this down by presenting a list of cities, representing
+the time zones in which they are located.
+
+  1. Africa      4. Australia  7. Atlantic  10. Pacific  13. Etc
+  2. America     5. Arctic     8. Europe    11. SystemV
+  3. Antarctica  6. Asia       9. Indian    12. US
+Geographic area: 
+Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 111.
+
+Current default time zone: '/UTC'
+Local time is now:      Fri May 29 04:50:45 UTC 2020.
+Universal Time is now:  Fri May 29 04:50:45 UTC 2020.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 83, <GEN6> line 4.
+Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
+Setting up systemd-sysv (237-3ubuntu10.41) ...
+Setting up libonig4:amd64 (6.7.0-1) ...
+Setting up libjpeg-turbo8:amd64 (1.5.2-0ubuntu5.18.04.3) ...
+Setting up libbsd0:amd64 (0.8.7-1ubuntu0.1) ...
+Setting up libfreetype6:amd64 (2.8.1-2ubuntu2) ...
+Setting up libxslt1.1:amd64 (1.1.29-5ubuntu0.2) ...
+Setting up libsodium23:amd64 (1.0.18-1+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up php-common (2:76+ubuntu18.04.1+deb.sury.org+9) ...
+Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.
+Setting up dmsetup (2:1.02.145-4.1ubuntu3.18.04.3) ...
+Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+Setting up libpcre2-8-0:amd64 (10.34-7+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up libx11-data (2:1.6.4-3ubuntu0.2) ...
+Setting up libxau6:amd64 (1:1.0.8-1) ...
+Setting up networkd-dispatcher (1.7-0ubuntu3.3) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/networkd-dispatcher.service → /lib/systemd/system/networkd-dispatcher.service.
+Setting up libwebp6:amd64 (0.6.1-2) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+Setting up php7.4-common (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/calendar.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ctype.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/exif.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/fileinfo.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ffi.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/ftp.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/gettext.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/iconv.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/pdo.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/phar.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/posix.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/shmop.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sockets.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvmsg.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvsem.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/sysvshm.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/tokenizer.ini with new version
+Setting up php7.4-opcache (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/opcache.ini with new version
+Setting up fontconfig-config (2.12.6-0ubuntu2) ...
+Setting up libpam-systemd:amd64 (237-3ubuntu10.41) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libtiff5:amd64 (4.0.9-5ubuntu0.3) ...
+Setting up php7.4-mysql (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/mysqlnd.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/mysqli.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/pdo_mysql.ini with new version
+Setting up php7.4-mbstring (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/mbstring.ini with new version
+Setting up php7.4-readline (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/readline.ini with new version
+Setting up php7.4-xml (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/dom.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/simplexml.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/xml.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/xmlreader.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/xmlwriter.ini with new version
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/xsl.ini with new version
+Setting up libxcb1:amd64 (1.13-2~ubuntu18.04) ...
+Setting up php7.4-json (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/json.ini with new version
+Setting up libfontconfig1:amd64 (2.12.6-0ubuntu2) ...
+Setting up php7.4-cli (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+update-alternatives: using /usr/bin/php7.4 to provide /usr/bin/php (php) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/php.1.gz because associated file /usr/share/man/man1/php7.4.1.gz (of link group php) doesn't exist
+update-alternatives: using /usr/bin/phar7.4 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.1.gz because associated file /usr/share/man/man1/phar7.4.1.gz (of link group phar) doesn't exist
+update-alternatives: using /usr/bin/phar.phar7.4 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.phar.1.gz because associated file /usr/share/man/man1/phar.phar7.4.1.gz (of link group phar.phar) doesn't exist
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/cli/php.ini with new version
+Setting up libx11-6:amd64 (2:1.6.4-3ubuntu0.2) ...
+Setting up php7.4-fpm (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/fpm/php.ini with new version
+Created symlink /etc/systemd/system/multi-user.target.wants/php7.4-fpm.service → /lib/systemd/system/php7.4-fpm.service.
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up libxpm4:amd64 (1:3.5.12-1) ...
+Setting up libgd3:amd64 (2.3.0-2+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up php7.4 (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Setting up php7.4-gd (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+
+Creating config file /etc/php/7.4/mods-available/gd.ini with new version
+Processing triggers for systemd (237-3ubuntu10.41) ...
+Processing triggers for dbus (1.12.2-1ubuntu1.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for php7.4-cli (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+Processing triggers for php7.4-fpm (7.4.6-1+ubuntu18.04.1+deb.sury.org+1) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Removing intermediate container b0cae61abbc9
+ ---> f09c5a093714
+Step 3/7 : RUN cat /etc/php/7.4/cli/php.ini
+ ---> Running in 1c33672b13e2
+[PHP]
+
+;;;;;;;;;;;;;;;;;;;
+; About php.ini   ;
+;;;;;;;;;;;;;;;;;;;
+; PHP's initialization file, generally called php.ini, is responsible for
+; configuring many of the aspects of PHP's behavior.
+
+; PHP attempts to find and load this configuration from a number of locations.
+; The following is a summary of its search order:
+; 1. SAPI module specific location.
+; 2. The PHPRC environment variable. (As of PHP 5.2.0)
+; 3. A number of predefined registry keys on Windows (As of PHP 5.2.0)
+; 4. Current working directory (except CLI)
+; 5. The web server's directory (for SAPI modules), or directory of PHP
+; (otherwise in Windows)
+; 6. The directory from the --with-config-file-path compile time option, or the
+; Windows directory (usually C:\windows)
+; See the PHP docs for more specific information.
+; http://php.net/configuration.file
+
+; The syntax of the file is extremely simple.  Whitespace and lines
+; beginning with a semicolon are silently ignored (as you probably guessed).
+; Section headers (e.g. [Foo]) are also silently ignored, even though
+; they might mean something in the future.
+
+; Directives following the section heading [PATH=/www/mysite] only
+; apply to PHP files in the /www/mysite directory.  Directives
+; following the section heading [HOST=www.example.com] only apply to
+; PHP files served from www.example.com.  Directives set in these
+; special sections cannot be overridden by user-defined INI files or
+; at runtime. Currently, [PATH=] and [HOST=] sections only work under
+; CGI/FastCGI.
+; http://php.net/ini.sections
+
+; Directives are specified using the following syntax:
+; directive = value
+; Directive names are *case sensitive* - foo=bar is different from FOO=bar.
+; Directives are variables used to configure PHP or PHP extensions.
+; There is no name validation.  If PHP can't find an expected
+; directive because it is not set or is mistyped, a default value will be used.
+
+; The value can be a string, a number, a PHP constant (e.g. E_ALL or M_PI), one
+; of the INI constants (On, Off, True, False, Yes, No and None) or an expression
+; (e.g. E_ALL & ~E_NOTICE), a quoted string ("bar"), or a reference to a
+; previously set variable or directive (e.g. ${foo})
+
+; Expressions in the INI file are limited to bitwise operators and parentheses:
+; |  bitwise OR
+; ^  bitwise XOR
+; &  bitwise AND
+; ~  bitwise NOT
+; !  boolean NOT
+
+; Boolean flags can be turned on using the values 1, On, True or Yes.
+; They can be turned off using the values 0, Off, False or No.
+
+; An empty string can be denoted by simply not writing anything after the equal
+; sign, or by using the None keyword:
+
+; foo =         ; sets foo to an empty string
+; foo = None    ; sets foo to an empty string
+; foo = "None"  ; sets foo to the string 'None'
+
+; If you use constants in your value, and these constants belong to a
+; dynamically loaded extension (either a PHP extension or a Zend extension),
+; you may only use these constants *after* the line that loads the extension.
+
+;;;;;;;;;;;;;;;;;;;
+; About this file ;
+;;;;;;;;;;;;;;;;;;;
+; PHP comes packaged with two INI files. One that is recommended to be used
+; in production environments and one that is recommended to be used in
+; development environments.
+
+; php.ini-production contains settings which hold security, performance and
+; best practices at its core. But please be aware, these settings may break
+; compatibility with older or less security conscience applications. We
+; recommending using the production ini in production and testing environments.
+
+; php.ini-development is very similar to its production variant, except it is
+; much more verbose when it comes to errors. We recommend using the
+; development version only in development environments, as errors shown to
+; application users can inadvertently leak otherwise secure information.
+
+; This is the php.ini-production INI file.
+
+;;;;;;;;;;;;;;;;;;;
+; Quick Reference ;
+;;;;;;;;;;;;;;;;;;;
+; The following are all the settings which are different in either the production
+; or development versions of the INIs with respect to PHP's default behavior.
+; Please see the actual settings later in the document for more details as to why
+; we recommend these changes in PHP's behavior.
+
+; display_errors
+;   Default Value: On
+;   Development Value: On
+;   Production Value: Off
+
+; display_startup_errors
+;   Default Value: Off
+;   Development Value: On
+;   Production Value: Off
+
+; error_reporting
+;   Default Value: E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+;   Development Value: E_ALL
+;   Production Value: E_ALL & ~E_DEPRECATED & ~E_STRICT
+
+; log_errors
+;   Default Value: Off
+;   Development Value: On
+;   Production Value: On
+
+; max_input_time
+;   Default Value: -1 (Unlimited)
+;   Development Value: 60 (60 seconds)
+;   Production Value: 60 (60 seconds)
+
+; output_buffering
+;   Default Value: Off
+;   Development Value: 4096
+;   Production Value: 4096
+
+; register_argc_argv
+;   Default Value: On
+;   Development Value: Off
+;   Production Value: Off
+
+; request_order
+;   Default Value: None
+;   Development Value: "GP"
+;   Production Value: "GP"
+
+; session.gc_divisor
+;   Default Value: 100
+;   Development Value: 1000
+;   Production Value: 1000
+
+; session.sid_bits_per_character
+;   Default Value: 4
+;   Development Value: 5
+;   Production Value: 5
+
+; short_open_tag
+;   Default Value: On
+;   Development Value: Off
+;   Production Value: Off
+
+; variables_order
+;   Default Value: "EGPCS"
+;   Development Value: "GPCS"
+;   Production Value: "GPCS"
+
+;;;;;;;;;;;;;;;;;;;;
+; php.ini Options  ;
+;;;;;;;;;;;;;;;;;;;;
+; Name for user-defined php.ini (.htaccess) files. Default is ".user.ini"
+;user_ini.filename = ".user.ini"
+
+; To disable this feature set this option to an empty value
+;user_ini.filename =
+
+; TTL for user-defined php.ini files (time-to-live) in seconds. Default is 300 seconds (5 minutes)
+;user_ini.cache_ttl = 300
+
+;;;;;;;;;;;;;;;;;;;;
+; Language Options ;
+;;;;;;;;;;;;;;;;;;;;
+
+; Enable the PHP scripting language engine under Apache.
+; http://php.net/engine
+engine = On
+
+; This directive determines whether or not PHP will recognize code between
+; <? and ?> tags as PHP source which should be processed as such. It is
+; generally recommended that <?php and ?> should be used and that this feature
+; should be disabled, as enabling it may result in issues when generating XML
+; documents, however this remains supported for backward compatibility reasons.
+; Note that this directive does not control the <?= shorthand tag, which can be
+; used regardless of this directive.
+; Default Value: On
+; Development Value: Off
+; Production Value: Off
+; http://php.net/short-open-tag
+short_open_tag = Off
+
+; The number of significant digits displayed in floating point numbers.
+; http://php.net/precision
+precision = 14
+
+; Output buffering is a mechanism for controlling how much output data
+; (excluding headers and cookies) PHP should keep internally before pushing that
+; data to the client. If your application's output exceeds this setting, PHP
+; will send that data in chunks of roughly the size you specify.
+; Turning on this setting and managing its maximum buffer size can yield some
+; interesting side-effects depending on your application and web server.
+; You may be able to send headers and cookies after you've already sent output
+; through print or echo. You also may see performance benefits if your server is
+; emitting less packets due to buffered output versus PHP streaming the output
+; as it gets it. On production servers, 4096 bytes is a good setting for performance
+; reasons.
+; Note: Output buffering can also be controlled via Output Buffering Control
+;   functions.
+; Possible Values:
+;   On = Enabled and buffer is unlimited. (Use with caution)
+;   Off = Disabled
+;   Integer = Enables the buffer and sets its maximum size in bytes.
+; Note: This directive is hardcoded to Off for the CLI SAPI
+; Default Value: Off
+; Development Value: 4096
+; Production Value: 4096
+; http://php.net/output-buffering
+output_buffering = 4096
+
+; You can redirect all of the output of your scripts to a function.  For
+; example, if you set output_handler to "mb_output_handler", character
+; encoding will be transparently converted to the specified encoding.
+; Setting any output handler automatically turns on output buffering.
+; Note: People who wrote portable scripts should not depend on this ini
+;   directive. Instead, explicitly set the output handler using ob_start().
+;   Using this ini directive may cause problems unless you know what script
+;   is doing.
+; Note: You cannot use both "mb_output_handler" with "ob_iconv_handler"
+;   and you cannot use both "ob_gzhandler" and "zlib.output_compression".
+; Note: output_handler must be empty if this is set 'On' !!!!
+;   Instead you must use zlib.output_handler.
+; http://php.net/output-handler
+;output_handler =
+
+; URL rewriter function rewrites URL on the fly by using
+; output buffer. You can set target tags by this configuration.
+; "form" tag is special tag. It will add hidden input tag to pass values.
+; Refer to session.trans_sid_tags for usage.
+; Default Value: "form="
+; Development Value: "form="
+; Production Value: "form="
+;url_rewriter.tags
+
+; URL rewriter will not rewrite absolute URL nor form by default. To enable
+; absolute URL rewrite, allowed hosts must be defined at RUNTIME.
+; Refer to session.trans_sid_hosts for more details.
+; Default Value: ""
+; Development Value: ""
+; Production Value: ""
+;url_rewriter.hosts
+
+; Transparent output compression using the zlib library
+; Valid values for this option are 'off', 'on', or a specific buffer size
+; to be used for compression (default is 4KB)
+; Note: Resulting chunk size may vary due to nature of compression. PHP
+;   outputs chunks that are few hundreds bytes each as a result of
+;   compression. If you prefer a larger chunk size for better
+;   performance, enable output_buffering in addition.
+; Note: You need to use zlib.output_handler instead of the standard
+;   output_handler, or otherwise the output will be corrupted.
+; http://php.net/zlib.output-compression
+zlib.output_compression = Off
+
+; http://php.net/zlib.output-compression-level
+;zlib.output_compression_level = -1
+
+; You cannot specify additional output handlers if zlib.output_compression
+; is activated here. This setting does the same as output_handler but in
+; a different order.
+; http://php.net/zlib.output-handler
+;zlib.output_handler =
+
+; Implicit flush tells PHP to tell the output layer to flush itself
+; automatically after every output block.  This is equivalent to calling the
+; PHP function flush() after each and every call to print() or echo() and each
+; and every HTML block.  Turning this option on has serious performance
+; implications and is generally recommended for debugging purposes only.
+; http://php.net/implicit-flush
+; Note: This directive is hardcoded to On for the CLI SAPI
+implicit_flush = Off
+
+; The unserialize callback function will be called (with the undefined class'
+; name as parameter), if the unserializer finds an undefined class
+; which should be instantiated. A warning appears if the specified function is
+; not defined, or if the function doesn't include/implement the missing class.
+; So only set this entry, if you really want to implement such a
+; callback-function.
+unserialize_callback_func =
+
+; The unserialize_max_depth specifies the default depth limit for unserialized
+; structures. Setting the depth limit too high may result in stack overflows
+; during unserialization. The unserialize_max_depth ini setting can be
+; overridden by the max_depth option on individual unserialize() calls.
+; A value of 0 disables the depth limit.
+;unserialize_max_depth = 4096
+
+; When floats & doubles are serialized, store serialize_precision significant
+; digits after the floating point. The default value ensures that when floats
+; are decoded with unserialize, the data will remain the same.
+; The value is also used for json_encode when encoding double values.
+; If -1 is used, then dtoa mode 0 is used which automatically select the best
+; precision.
+serialize_precision = -1
+
+; open_basedir, if set, limits all file operations to the defined directory
+; and below.  This directive makes most sense if used in a per-directory
+; or per-virtualhost web server configuration file.
+; Note: disables the realpath cache
+; http://php.net/open-basedir
+;open_basedir =
+
+; This directive allows you to disable certain functions.
+; It receives a comma-delimited list of function names.
+; http://php.net/disable-functions
+disable_functions =
+
+; This directive allows you to disable certain classes.
+; It receives a comma-delimited list of class names.
+; http://php.net/disable-classes
+disable_classes =
+
+; Colors for Syntax Highlighting mode.  Anything that's acceptable in
+; <span style="color: ???????"> would work.
+; http://php.net/syntax-highlighting
+;highlight.string  = #DD0000
+;highlight.comment = #FF9900
+;highlight.keyword = #007700
+;highlight.default = #0000BB
+;highlight.html    = #000000
+
+; If enabled, the request will be allowed to complete even if the user aborts
+; the request. Consider enabling it if executing long requests, which may end up
+; being interrupted by the user or a browser timing out. PHP's default behavior
+; is to disable this feature.
+; http://php.net/ignore-user-abort
+;ignore_user_abort = On
+
+; Determines the size of the realpath cache to be used by PHP. This value should
+; be increased on systems where PHP opens many files to reflect the quantity of
+; the file operations performed.
+; Note: if open_basedir is set, the cache is disabled
+; http://php.net/realpath-cache-size
+;realpath_cache_size = 4096k
+
+; Duration of time, in seconds for which to cache realpath information for a given
+; file or directory. For systems with rarely changing files, consider increasing this
+; value.
+; http://php.net/realpath-cache-ttl
+;realpath_cache_ttl = 120
+
+; Enables or disables the circular reference collector.
+; http://php.net/zend.enable-gc
+zend.enable_gc = On
+
+; If enabled, scripts may be written in encodings that are incompatible with
+; the scanner.  CP936, Big5, CP949 and Shift_JIS are the examples of such
+; encodings.  To use this feature, mbstring extension must be enabled.
+; Default: Off
+;zend.multibyte = Off
+
+; Allows to set the default encoding for the scripts.  This value will be used
+; unless "declare(encoding=...)" directive appears at the top of the script.
+; Only affects if zend.multibyte is set.
+; Default: ""
+;zend.script_encoding =
+
+; Allows to include or exclude arguments from stack traces generated for exceptions
+; Default: Off
+; In production, it is recommended to turn this setting on to prohibit the output 
+; of sensitive information in stack traces
+zend.exception_ignore_args = On
+
+;;;;;;;;;;;;;;;;;
+; Miscellaneous ;
+;;;;;;;;;;;;;;;;;
+
+; Decides whether PHP may expose the fact that it is installed on the server
+; (e.g. by adding its signature to the Web server header).  It is no security
+; threat in any way, but it makes it possible to determine whether you use PHP
+; on your server or not.
+; http://php.net/expose-php
+expose_php = On
+
+;;;;;;;;;;;;;;;;;;;
+; Resource Limits ;
+;;;;;;;;;;;;;;;;;;;
+
+; Maximum execution time of each script, in seconds
+; http://php.net/max-execution-time
+; Note: This directive is hardcoded to 0 for the CLI SAPI
+max_execution_time = 30
+
+; Maximum amount of time each script may spend parsing request data. It's a good
+; idea to limit this time on productions servers in order to eliminate unexpectedly
+; long running scripts.
+; Note: This directive is hardcoded to -1 for the CLI SAPI
+; Default Value: -1 (Unlimited)
+; Development Value: 60 (60 seconds)
+; Production Value: 60 (60 seconds)
+; http://php.net/max-input-time
+max_input_time = 60
+
+; Maximum input variable nesting level
+; http://php.net/max-input-nesting-level
+;max_input_nesting_level = 64
+
+; How many GET/POST/COOKIE input variables may be accepted
+;max_input_vars = 1000
+
+; Maximum amount of memory a script may consume
+; http://php.net/memory-limit
+memory_limit = -1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Error handling and logging ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; This directive informs PHP of which errors, warnings and notices you would like
+; it to take action for. The recommended way of setting values for this
+; directive is through the use of the error level constants and bitwise
+; operators. The error level constants are below here for convenience as well as
+; some common settings and their meanings.
+; By default, PHP is set to take action on all errors, notices and warnings EXCEPT
+; those related to E_NOTICE and E_STRICT, which together cover best practices and
+; recommended coding standards in PHP. For performance reasons, this is the
+; recommend error reporting setting. Your production server shouldn't be wasting
+; resources complaining about best practices and coding standards. That's what
+; development servers and development settings are for.
+; Note: The php.ini-development file has this setting as E_ALL. This
+; means it pretty much reports everything which is exactly what you want during
+; development and early testing.
+;
+; Error Level Constants:
+; E_ALL             - All errors and warnings (includes E_STRICT as of PHP 5.4.0)
+; E_ERROR           - fatal run-time errors
+; E_RECOVERABLE_ERROR  - almost fatal run-time errors
+; E_WARNING         - run-time warnings (non-fatal errors)
+; E_PARSE           - compile-time parse errors
+; E_NOTICE          - run-time notices (these are warnings which often result
+;                     from a bug in your code, but it's possible that it was
+;                     intentional (e.g., using an uninitialized variable and
+;                     relying on the fact it is automatically initialized to an
+;                     empty string)
+; E_STRICT          - run-time notices, enable to have PHP suggest changes
+;                     to your code which will ensure the best interoperability
+;                     and forward compatibility of your code
+; E_CORE_ERROR      - fatal errors that occur during PHP's initial startup
+; E_CORE_WARNING    - warnings (non-fatal errors) that occur during PHP's
+;                     initial startup
+; E_COMPILE_ERROR   - fatal compile-time errors
+; E_COMPILE_WARNING - compile-time warnings (non-fatal errors)
+; E_USER_ERROR      - user-generated error message
+; E_USER_WARNING    - user-generated warning message
+; E_USER_NOTICE     - user-generated notice message
+; E_DEPRECATED      - warn about code that will not work in future versions
+;                     of PHP
+; E_USER_DEPRECATED - user-generated deprecation warnings
+;
+; Common Values:
+;   E_ALL (Show all errors, warnings and notices including coding standards.)
+;   E_ALL & ~E_NOTICE  (Show all errors, except for notices)
+;   E_ALL & ~E_NOTICE & ~E_STRICT  (Show all errors, except for notices and coding standards warnings.)
+;   E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR  (Show only errors)
+; Default Value: E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+; Development Value: E_ALL
+; Production Value: E_ALL & ~E_DEPRECATED & ~E_STRICT
+; http://php.net/error-reporting
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+
+; This directive controls whether or not and where PHP will output errors,
+; notices and warnings too. Error output is very useful during development, but
+; it could be very dangerous in production environments. Depending on the code
+; which is triggering the error, sensitive information could potentially leak
+; out of your application such as database usernames and passwords or worse.
+; For production environments, we recommend logging errors rather than
+; sending them to STDOUT.
+; Possible Values:
+;   Off = Do not display any errors
+;   stderr = Display errors to STDERR (affects only CGI/CLI binaries!)
+;   On or stdout = Display errors to STDOUT
+; Default Value: On
+; Development Value: On
+; Production Value: Off
+; http://php.net/display-errors
+display_errors = Off
+
+; The display of errors which occur during PHP's startup sequence are handled
+; separately from display_errors. PHP's default behavior is to suppress those
+; errors from clients. Turning the display of startup errors on can be useful in
+; debugging configuration problems. We strongly recommend you
+; set this to 'off' for production servers.
+; Default Value: Off
+; Development Value: On
+; Production Value: Off
+; http://php.net/display-startup-errors
+display_startup_errors = Off
+
+; Besides displaying errors, PHP can also log errors to locations such as a
+; server-specific log, STDERR, or a location specified by the error_log
+; directive found below. While errors should not be displayed on productions
+; servers they should still be monitored and logging is a great way to do that.
+; Default Value: Off
+; Development Value: On
+; Production Value: On
+; http://php.net/log-errors
+log_errors = On
+
+; Set maximum length of log_errors. In error_log information about the source is
+; added. The default is 1024 and 0 allows to not apply any maximum length at all.
+; http://php.net/log-errors-max-len
+log_errors_max_len = 1024
+
+; Do not log repeated messages. Repeated errors must occur in same file on same
+; line unless ignore_repeated_source is set true.
+; http://php.net/ignore-repeated-errors
+ignore_repeated_errors = Off
+
+; Ignore source of message when ignoring repeated messages. When this setting
+; is On you will not log errors with repeated messages from different files or
+; source lines.
+; http://php.net/ignore-repeated-source
+ignore_repeated_source = Off
+
+; If this parameter is set to Off, then memory leaks will not be shown (on
+; stdout or in the log). This is only effective in a debug compile, and if
+; error reporting includes E_WARNING in the allowed list
+; http://php.net/report-memleaks
+report_memleaks = On
+
+; This setting is on by default.
+;report_zend_debug = 0
+
+; Store the last error/warning message in $php_errormsg (boolean). Setting this value
+; to On can assist in debugging and is appropriate for development servers. It should
+; however be disabled on production servers.
+; This directive is DEPRECATED.
+; Default Value: Off
+; Development Value: Off
+; Production Value: Off
+; http://php.net/track-errors
+;track_errors = Off
+
+; Turn off normal error reporting and emit XML-RPC error XML
+; http://php.net/xmlrpc-errors
+;xmlrpc_errors = 0
+
+; An XML-RPC faultCode
+;xmlrpc_error_number = 0
+
+; When PHP displays or logs an error, it has the capability of formatting the
+; error message as HTML for easier reading. This directive controls whether
+; the error message is formatted as HTML or not.
+; Note: This directive is hardcoded to Off for the CLI SAPI
+; http://php.net/html-errors
+;html_errors = On
+
+; If html_errors is set to On *and* docref_root is not empty, then PHP
+; produces clickable error messages that direct to a page describing the error
+; or function causing the error in detail.
+; You can download a copy of the PHP manual from http://php.net/docs
+; and change docref_root to the base URL of your local copy including the
+; leading '/'. You must also specify the file extension being used including
+; the dot. PHP's default behavior is to leave these settings empty, in which
+; case no links to documentation are generated.
+; Note: Never use this feature for production boxes.
+; http://php.net/docref-root
+; Examples
+;docref_root = "/phpmanual/"
+
+; http://php.net/docref-ext
+;docref_ext = .html
+
+; String to output before an error message. PHP's default behavior is to leave
+; this setting blank.
+; http://php.net/error-prepend-string
+; Example:
+;error_prepend_string = "<span style='color: #ff0000'>"
+
+; String to output after an error message. PHP's default behavior is to leave
+; this setting blank.
+; http://php.net/error-append-string
+; Example:
+;error_append_string = "</span>"
+
+; Log errors to specified file. PHP's default behavior is to leave this value
+; empty.
+; http://php.net/error-log
+; Example:
+;error_log = php_errors.log
+; Log errors to syslog (Event Log on Windows).
+;error_log = syslog
+
+; The syslog ident is a string which is prepended to every message logged
+; to syslog. Only used when error_log is set to syslog.
+;syslog.ident = php
+
+; The syslog facility is used to specify what type of program is logging
+; the message. Only used when error_log is set to syslog.
+;syslog.facility = user
+
+; Set this to disable filtering control characters (the default).
+; Some loggers only accept NVT-ASCII, others accept anything that's not
+; control characters. If your logger accepts everything, then no filtering
+; is needed at all.
+; Allowed values are:
+;   ascii (all printable ASCII characters and NL)
+;   no-ctrl (all characters except control characters)
+;   all (all characters)
+;   raw (like "all", but messages are not split at newlines)
+; http://php.net/syslog.filter
+;syslog.filter = ascii
+
+;windows.show_crt_warning
+; Default value: 0
+; Development value: 0
+; Production value: 0
+
+;;;;;;;;;;;;;;;;;
+; Data Handling ;
+;;;;;;;;;;;;;;;;;
+
+; The separator used in PHP generated URLs to separate arguments.
+; PHP's default setting is "&".
+; http://php.net/arg-separator.output
+; Example:
+;arg_separator.output = "&amp;"
+
+; List of separator(s) used by PHP to parse input URLs into variables.
+; PHP's default setting is "&".
+; NOTE: Every character in this directive is considered as separator!
+; http://php.net/arg-separator.input
+; Example:
+;arg_separator.input = ";&"
+
+; This directive determines which super global arrays are registered when PHP
+; starts up. G,P,C,E & S are abbreviations for the following respective super
+; globals: GET, POST, COOKIE, ENV and SERVER. There is a performance penalty
+; paid for the registration of these arrays and because ENV is not as commonly
+; used as the others, ENV is not recommended on productions servers. You
+; can still get access to the environment variables through getenv() should you
+; need to.
+; Default Value: "EGPCS"
+; Development Value: "GPCS"
+; Production Value: "GPCS";
+; http://php.net/variables-order
+variables_order = "GPCS"
+
+; This directive determines which super global data (G,P & C) should be
+; registered into the super global array REQUEST. If so, it also determines
+; the order in which that data is registered. The values for this directive
+; are specified in the same manner as the variables_order directive,
+; EXCEPT one. Leaving this value empty will cause PHP to use the value set
+; in the variables_order directive. It does not mean it will leave the super
+; globals array REQUEST empty.
+; Default Value: None
+; Development Value: "GP"
+; Production Value: "GP"
+; http://php.net/request-order
+request_order = "GP"
+
+; This directive determines whether PHP registers $argv & $argc each time it
+; runs. $argv contains an array of all the arguments passed to PHP when a script
+; is invoked. $argc contains an integer representing the number of arguments
+; that were passed when the script was invoked. These arrays are extremely
+; useful when running scripts from the command line. When this directive is
+; enabled, registering these variables consumes CPU cycles and memory each time
+; a script is executed. For performance reasons, this feature should be disabled
+; on production servers.
+; Note: This directive is hardcoded to On for the CLI SAPI
+; Default Value: On
+; Development Value: Off
+; Production Value: Off
+; http://php.net/register-argc-argv
+register_argc_argv = Off
+
+; When enabled, the ENV, REQUEST and SERVER variables are created when they're
+; first used (Just In Time) instead of when the script starts. If these
+; variables are not used within a script, having this directive on will result
+; in a performance gain. The PHP directive register_argc_argv must be disabled
+; for this directive to have any effect.
+; http://php.net/auto-globals-jit
+auto_globals_jit = On
+
+; Whether PHP will read the POST data.
+; This option is enabled by default.
+; Most likely, you won't want to disable this option globally. It causes $_POST
+; and $_FILES to always be empty; the only way you will be able to read the
+; POST data will be through the php://input stream wrapper. This can be useful
+; to proxy requests or to process the POST data in a memory efficient fashion.
+; http://php.net/enable-post-data-reading
+;enable_post_data_reading = Off
+
+; Maximum size of POST data that PHP will accept.
+; Its value may be 0 to disable the limit. It is ignored if POST data reading
+; is disabled through enable_post_data_reading.
+; http://php.net/post-max-size
+post_max_size = 8M
+
+; Automatically add files before PHP document.
+; http://php.net/auto-prepend-file
+auto_prepend_file =
+
+; Automatically add files after PHP document.
+; http://php.net/auto-append-file
+auto_append_file =
+
+; By default, PHP will output a media type using the Content-Type header. To
+; disable this, simply set it to be empty.
+;
+; PHP's built-in default media type is set to text/html.
+; http://php.net/default-mimetype
+default_mimetype = "text/html"
+
+; PHP's default character set is set to UTF-8.
+; http://php.net/default-charset
+default_charset = "UTF-8"
+
+; PHP internal character encoding is set to empty.
+; If empty, default_charset is used.
+; http://php.net/internal-encoding
+;internal_encoding =
+
+; PHP input character encoding is set to empty.
+; If empty, default_charset is used.
+; http://php.net/input-encoding
+;input_encoding =
+
+; PHP output character encoding is set to empty.
+; If empty, default_charset is used.
+; See also output_buffer.
+; http://php.net/output-encoding
+;output_encoding =
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+; Paths and Directories ;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; UNIX: "/path1:/path2"
+;include_path = ".:/usr/share/php"
+;
+; Windows: "\path1;\path2"
+;include_path = ".;c:\php\includes"
+;
+; PHP's default setting for include_path is ".;/path/to/php/pear"
+; http://php.net/include-path
+
+; The root of the PHP pages, used only if nonempty.
+; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
+; if you are running php as a CGI under any web server (other than IIS)
+; see documentation for security issues.  The alternate is to use the
+; cgi.force_redirect configuration below
+; http://php.net/doc-root
+doc_root =
+
+; The directory under which PHP opens the script using /~username used only
+; if nonempty.
+; http://php.net/user-dir
+user_dir =
+
+; Directory in which the loadable extensions (modules) reside.
+; http://php.net/extension-dir
+;extension_dir = "./"
+; On windows:
+;extension_dir = "ext"
+
+; Directory where the temporary files should be placed.
+; Defaults to the system default (see sys_get_temp_dir)
+;sys_temp_dir = "/tmp"
+
+; Whether or not to enable the dl() function.  The dl() function does NOT work
+; properly in multithreaded servers, such as IIS or Zeus, and is automatically
+; disabled on them.
+; http://php.net/enable-dl
+enable_dl = Off
+
+; cgi.force_redirect is necessary to provide security running PHP as a CGI under
+; most web servers.  Left undefined, PHP turns this on by default.  You can
+; turn it off here AT YOUR OWN RISK
+; **You CAN safely turn this off for IIS, in fact, you MUST.**
+; http://php.net/cgi.force-redirect
+;cgi.force_redirect = 1
+
+; if cgi.nph is enabled it will force cgi to always sent Status: 200 with
+; every request. PHP's default behavior is to disable this feature.
+;cgi.nph = 1
+
+; if cgi.force_redirect is turned on, and you are not running under Apache or Netscape
+; (iPlanet) web servers, you MAY need to set an environment variable name that PHP
+; will look for to know it is OK to continue execution.  Setting this variable MAY
+; cause security issues, KNOW WHAT YOU ARE DOING FIRST.
+; http://php.net/cgi.redirect-status-env
+;cgi.redirect_status_env =
+
+; cgi.fix_pathinfo provides *real* PATH_INFO/PATH_TRANSLATED support for CGI.  PHP's
+; previous behaviour was to set PATH_TRANSLATED to SCRIPT_FILENAME, and to not grok
+; what PATH_INFO is.  For more information on PATH_INFO, see the cgi specs.  Setting
+; this to 1 will cause PHP CGI to fix its paths to conform to the spec.  A setting
+; of zero causes PHP to behave as before.  Default is 1.  You should fix your scripts
+; to use SCRIPT_FILENAME rather than PATH_TRANSLATED.
+; http://php.net/cgi.fix-pathinfo
+;cgi.fix_pathinfo=1
+
+; if cgi.discard_path is enabled, the PHP CGI binary can safely be placed outside
+; of the web tree and people will not be able to circumvent .htaccess security.
+;cgi.discard_path=1
+
+; FastCGI under IIS supports the ability to impersonate
+; security tokens of the calling client.  This allows IIS to define the
+; security context that the request runs under.  mod_fastcgi under Apache
+; does not currently support this feature (03/17/2002)
+; Set to 1 if running under IIS.  Default is zero.
+; http://php.net/fastcgi.impersonate
+;fastcgi.impersonate = 1
+
+; Disable logging through FastCGI connection. PHP's default behavior is to enable
+; this feature.
+;fastcgi.logging = 0
+
+; cgi.rfc2616_headers configuration option tells PHP what type of headers to
+; use when sending HTTP response code. If set to 0, PHP sends Status: header that
+; is supported by Apache. When this option is set to 1, PHP will send
+; RFC2616 compliant header.
+; Default is zero.
+; http://php.net/cgi.rfc2616-headers
+;cgi.rfc2616_headers = 0
+
+; cgi.check_shebang_line controls whether CGI PHP checks for line starting with #!
+; (shebang) at the top of the running script. This line might be needed if the
+; script support running both as stand-alone script and via PHP CGI<. PHP in CGI
+; mode skips this line and ignores its content if this directive is turned on.
+; http://php.net/cgi.check-shebang-line
+;cgi.check_shebang_line=1
+
+;;;;;;;;;;;;;;;;
+; File Uploads ;
+;;;;;;;;;;;;;;;;
+
+; Whether to allow HTTP file uploads.
+; http://php.net/file-uploads
+file_uploads = On
+
+; Temporary directory for HTTP uploaded files (will use system default if not
+; specified).
+; http://php.net/upload-tmp-dir
+;upload_tmp_dir =
+
+; Maximum allowed size for uploaded files.
+; http://php.net/upload-max-filesize
+upload_max_filesize = 2M
+
+; Maximum number of files that can be uploaded via a single request
+max_file_uploads = 20
+
+;;;;;;;;;;;;;;;;;;
+; Fopen wrappers ;
+;;;;;;;;;;;;;;;;;;
+
+; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-fopen
+allow_url_fopen = On
+
+; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
+; http://php.net/allow-url-include
+allow_url_include = Off
+
+; Define the anonymous ftp password (your email address). PHP's default setting
+; for this is empty.
+; http://php.net/from
+;from="john@doe.com"
+
+; Define the User-Agent string. PHP's default setting for this is empty.
+; http://php.net/user-agent
+;user_agent="PHP"
+
+; Default timeout for socket based streams (seconds)
+; http://php.net/default-socket-timeout
+default_socket_timeout = 60
+
+; If your scripts have to deal with files from Macintosh systems,
+; or you are running on a Mac and need to deal with files from
+; unix or win32 systems, setting this flag will cause PHP to
+; automatically detect the EOL character in those files so that
+; fgets() and file() will work regardless of the source of the file.
+; http://php.net/auto-detect-line-endings
+;auto_detect_line_endings = Off
+
+;;;;;;;;;;;;;;;;;;;;;;
+; Dynamic Extensions ;
+;;;;;;;;;;;;;;;;;;;;;;
+
+; If you wish to have an extension loaded automatically, use the following
+; syntax:
+;
+;   extension=modulename
+;
+; For example:
+;
+;   extension=mysqli
+;
+; When the extension library to load is not located in the default extension
+; directory, You may specify an absolute path to the library file:
+;
+;   extension=/path/to/extension/mysqli.so
+;
+; Note : The syntax used in previous PHP versions ('extension=<ext>.so' and
+; 'extension='php_<ext>.dll') is supported for legacy reasons and may be
+; deprecated in a future PHP major version. So, when it is possible, please
+; move to the new ('extension=<ext>) syntax.
+;
+; Notes for Windows environments :
+;
+; - Many DLL files are located in the extensions/ (PHP 4) or ext/ (PHP 5+)
+;   extension folders as well as the separate PECL DLL download (PHP 5+).
+;   Be sure to appropriately set the extension_dir directive.
+;
+;extension=bz2
+;extension=curl
+;extension=ffi
+;extension=ftp
+;extension=fileinfo
+;extension=gd2
+;extension=gettext
+;extension=gmp
+;extension=intl
+;extension=imap
+;extension=ldap
+;extension=mbstring
+;extension=exif      ; Must be after mbstring as it depends on it
+;extension=mysqli
+;extension=oci8_12c  ; Use with Oracle Database 12c Instant Client
+;extension=odbc
+;extension=openssl
+;extension=pdo_firebird
+;extension=pdo_mysql
+;extension=pdo_oci
+;extension=pdo_odbc
+;extension=pdo_pgsql
+;extension=pdo_sqlite
+;extension=pgsql
+;extension=shmop
+
+; The MIBS data available in the PHP distribution must be installed.
+; See http://www.php.net/manual/en/snmp.installation.php
+;extension=snmp
+
+;extension=soap
+;extension=sockets
+;extension=sodium
+;extension=sqlite3
+;extension=tidy
+;extension=xmlrpc
+;extension=xsl
+
+;;;;;;;;;;;;;;;;;;;
+; Module Settings ;
+;;;;;;;;;;;;;;;;;;;
+
+[CLI Server]
+; Whether the CLI web server uses ANSI color coding in its terminal output.
+cli_server.color = On
+
+[Date]
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
+;date.timezone =
+
+; http://php.net/date.default-latitude
+;date.default_latitude = 31.7667
+
+; http://php.net/date.default-longitude
+;date.default_longitude = 35.2333
+
+; http://php.net/date.sunrise-zenith
+;date.sunrise_zenith = 90.583333
+
+; http://php.net/date.sunset-zenith
+;date.sunset_zenith = 90.583333
+
+[filter]
+; http://php.net/filter.default
+;filter.default = unsafe_raw
+
+; http://php.net/filter.default-flags
+;filter.default_flags =
+
+[iconv]
+; Use of this INI entry is deprecated, use global input_encoding instead.
+; If empty, default_charset or input_encoding or iconv.input_encoding is used.
+; The precedence is: default_charset < input_encoding < iconv.input_encoding
+;iconv.input_encoding =
+
+; Use of this INI entry is deprecated, use global internal_encoding instead.
+; If empty, default_charset or internal_encoding or iconv.internal_encoding is used.
+; The precedence is: default_charset < internal_encoding < iconv.internal_encoding
+;iconv.internal_encoding =
+
+; Use of this INI entry is deprecated, use global output_encoding instead.
+; If empty, default_charset or output_encoding or iconv.output_encoding is used.
+; The precedence is: default_charset < output_encoding < iconv.output_encoding
+; To use an output encoding conversion, iconv's output handler must be set
+; otherwise output encoding conversion cannot be performed.
+;iconv.output_encoding =
+
+[imap]
+; rsh/ssh logins are disabled by default. Use this INI entry if you want to
+; enable them. Note that the IMAP library does not filter mailbox names before
+; passing them to rsh/ssh command, thus passing untrusted data to this function
+; with rsh/ssh enabled is insecure.
+;imap.enable_insecure_rsh=0
+
+[intl]
+;intl.default_locale =
+; This directive allows you to produce PHP errors when some error
+; happens within intl functions. The value is the level of the error produced.
+; Default is 0, which does not produce any errors.
+;intl.error_level = E_WARNING
+;intl.use_exceptions = 0
+
+[sqlite3]
+; Directory pointing to SQLite3 extensions
+; http://php.net/sqlite3.extension-dir
+;sqlite3.extension_dir =
+
+; SQLite defensive mode flag (only available from SQLite 3.26+)
+; When the defensive flag is enabled, language features that allow ordinary
+; SQL to deliberately corrupt the database file are disabled. This forbids
+; writing directly to the schema, shadow tables (eg. FTS data tables), or
+; the sqlite_dbpage virtual table.
+; https://www.sqlite.org/c3ref/c_dbconfig_defensive.html
+; (for older SQLite versions, this flag has no use)
+;sqlite3.defensive = 1
+
+[Pcre]
+; PCRE library backtracking limit.
+; http://php.net/pcre.backtrack-limit
+;pcre.backtrack_limit=100000
+
+; PCRE library recursion limit.
+; Please note that if you set this value to a high number you may consume all
+; the available process stack and eventually crash PHP (due to reaching the
+; stack size limit imposed by the Operating System).
+; http://php.net/pcre.recursion-limit
+;pcre.recursion_limit=100000
+
+; Enables or disables JIT compilation of patterns. This requires the PCRE
+; library to be compiled with JIT support.
+;pcre.jit=1
+
+[Pdo]
+; Whether to pool ODBC connections. Can be one of "strict", "relaxed" or "off"
+; http://php.net/pdo-odbc.connection-pooling
+;pdo_odbc.connection_pooling=strict
+
+;pdo_odbc.db2_instance_name
+
+[Pdo_mysql]
+; Default socket name for local MySQL connects.  If empty, uses the built-in
+; MySQL defaults.
+pdo_mysql.default_socket=
+
+[Phar]
+; http://php.net/phar.readonly
+;phar.readonly = On
+
+; http://php.net/phar.require-hash
+;phar.require_hash = On
+
+;phar.cache_list =
+
+[mail function]
+; For Win32 only.
+; http://php.net/smtp
+SMTP = localhost
+; http://php.net/smtp-port
+smtp_port = 25
+
+; For Win32 only.
+; http://php.net/sendmail-from
+;sendmail_from = me@example.com
+
+; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
+; http://php.net/sendmail-path
+;sendmail_path =
+
+; Force the addition of the specified parameters to be passed as extra parameters
+; to the sendmail binary. These parameters will always replace the value of
+; the 5th parameter to mail().
+;mail.force_extra_parameters =
+
+; Add X-PHP-Originating-Script: that will include uid of the script followed by the filename
+mail.add_x_header = Off
+
+; The path to a log file that will log all mail() calls. Log entries include
+; the full path of the script, line number, To address and headers.
+;mail.log =
+; Log mail to syslog (Event Log on Windows).
+;mail.log = syslog
+
+[ODBC]
+; http://php.net/odbc.default-db
+;odbc.default_db    =  Not yet implemented
+
+; http://php.net/odbc.default-user
+;odbc.default_user  =  Not yet implemented
+
+; http://php.net/odbc.default-pw
+;odbc.default_pw    =  Not yet implemented
+
+; Controls the ODBC cursor model.
+; Default: SQL_CURSOR_STATIC (default).
+;odbc.default_cursortype
+
+; Allow or prevent persistent links.
+; http://php.net/odbc.allow-persistent
+odbc.allow_persistent = On
+
+; Check that a connection is still valid before reuse.
+; http://php.net/odbc.check-persistent
+odbc.check_persistent = On
+
+; Maximum number of persistent links.  -1 means no limit.
+; http://php.net/odbc.max-persistent
+odbc.max_persistent = -1
+
+; Maximum number of links (persistent + non-persistent).  -1 means no limit.
+; http://php.net/odbc.max-links
+odbc.max_links = -1
+
+; Handling of LONG fields.  Returns number of bytes to variables.  0 means
+; passthru.
+; http://php.net/odbc.defaultlrl
+odbc.defaultlrl = 4096
+
+; Handling of binary data.  0 means passthru, 1 return as is, 2 convert to char.
+; See the documentation on odbc_binmode and odbc_longreadlen for an explanation
+; of odbc.defaultlrl and odbc.defaultbinmode
+; http://php.net/odbc.defaultbinmode
+odbc.defaultbinmode = 1
+
+[MySQLi]
+
+; Maximum number of persistent links.  -1 means no limit.
+; http://php.net/mysqli.max-persistent
+mysqli.max_persistent = -1
+
+; Allow accessing, from PHP's perspective, local files with LOAD DATA statements
+; http://php.net/mysqli.allow_local_infile
+;mysqli.allow_local_infile = On
+
+; Allow or prevent persistent links.
+; http://php.net/mysqli.allow-persistent
+mysqli.allow_persistent = On
+
+; Maximum number of links.  -1 means no limit.
+; http://php.net/mysqli.max-links
+mysqli.max_links = -1
+
+; Default port number for mysqli_connect().  If unset, mysqli_connect() will use
+; the $MYSQL_TCP_PORT or the mysql-tcp entry in /etc/services or the
+; compile-time value defined MYSQL_PORT (in that order).  Win32 will only look
+; at MYSQL_PORT.
+; http://php.net/mysqli.default-port
+mysqli.default_port = 3306
+
+; Default socket name for local MySQL connects.  If empty, uses the built-in
+; MySQL defaults.
+; http://php.net/mysqli.default-socket
+mysqli.default_socket =
+
+; Default host for mysqli_connect() (doesn't apply in safe mode).
+; http://php.net/mysqli.default-host
+mysqli.default_host =
+
+; Default user for mysqli_connect() (doesn't apply in safe mode).
+; http://php.net/mysqli.default-user
+mysqli.default_user =
+
+; Default password for mysqli_connect() (doesn't apply in safe mode).
+; Note that this is generally a *bad* idea to store passwords in this file.
+; *Any* user with PHP access can run 'echo get_cfg_var("mysqli.default_pw")
+; and reveal this password!  And of course, any users with read access to this
+; file will be able to reveal the password as well.
+; http://php.net/mysqli.default-pw
+mysqli.default_pw =
+
+; Allow or prevent reconnect
+mysqli.reconnect = Off
+
+[mysqlnd]
+; Enable / Disable collection of general statistics by mysqlnd which can be
+; used to tune and monitor MySQL operations.
+mysqlnd.collect_statistics = On
+
+; Enable / Disable collection of memory usage statistics by mysqlnd which can be
+; used to tune and monitor MySQL operations.
+mysqlnd.collect_memory_statistics = Off
+
+; Records communication from all extensions using mysqlnd to the specified log
+; file.
+; http://php.net/mysqlnd.debug
+;mysqlnd.debug =
+
+; Defines which queries will be logged.
+;mysqlnd.log_mask = 0
+
+; Default size of the mysqlnd memory pool, which is used by result sets.
+;mysqlnd.mempool_default_size = 16000
+
+; Size of a pre-allocated buffer used when sending commands to MySQL in bytes.
+;mysqlnd.net_cmd_buffer_size = 2048
+
+; Size of a pre-allocated buffer used for reading data sent by the server in
+; bytes.
+;mysqlnd.net_read_buffer_size = 32768
+
+; Timeout for network requests in seconds.
+;mysqlnd.net_read_timeout = 31536000
+
+; SHA-256 Authentication Plugin related. File with the MySQL server public RSA
+; key.
+;mysqlnd.sha256_server_public_key =
+
+[OCI8]
+
+; Connection: Enables privileged connections using external
+; credentials (OCI_SYSOPER, OCI_SYSDBA)
+; http://php.net/oci8.privileged-connect
+;oci8.privileged_connect = Off
+
+; Connection: The maximum number of persistent OCI8 connections per
+; process. Using -1 means no limit.
+; http://php.net/oci8.max-persistent
+;oci8.max_persistent = -1
+
+; Connection: The maximum number of seconds a process is allowed to
+; maintain an idle persistent connection. Using -1 means idle
+; persistent connections will be maintained forever.
+; http://php.net/oci8.persistent-timeout
+;oci8.persistent_timeout = -1
+
+; Connection: The number of seconds that must pass before issuing a
+; ping during oci_pconnect() to check the connection validity. When
+; set to 0, each oci_pconnect() will cause a ping. Using -1 disables
+; pings completely.
+; http://php.net/oci8.ping-interval
+;oci8.ping_interval = 60
+
+; Connection: Set this to a user chosen connection class to be used
+; for all pooled server requests with Oracle 11g Database Resident
+; Connection Pooling (DRCP).  To use DRCP, this value should be set to
+; the same string for all web servers running the same application,
+; the database pool must be configured, and the connection string must
+; specify to use a pooled server.
+;oci8.connection_class =
+
+; High Availability: Using On lets PHP receive Fast Application
+; Notification (FAN) events generated when a database node fails. The
+; database must also be configured to post FAN events.
+;oci8.events = Off
+
+; Tuning: This option enables statement caching, and specifies how
+; many statements to cache. Using 0 disables statement caching.
+; http://php.net/oci8.statement-cache-size
+;oci8.statement_cache_size = 20
+
+; Tuning: Enables statement prefetching and sets the default number of
+; rows that will be fetched automatically after statement execution.
+; http://php.net/oci8.default-prefetch
+;oci8.default_prefetch = 100
+
+; Compatibility. Using On means oci_close() will not close
+; oci_connect() and oci_new_connect() connections.
+; http://php.net/oci8.old-oci-close-semantics
+;oci8.old_oci_close_semantics = Off
+
+[PostgreSQL]
+; Allow or prevent persistent links.
+; http://php.net/pgsql.allow-persistent
+pgsql.allow_persistent = On
+
+; Detect broken persistent links always with pg_pconnect().
+; Auto reset feature requires a little overheads.
+; http://php.net/pgsql.auto-reset-persistent
+pgsql.auto_reset_persistent = Off
+
+; Maximum number of persistent links.  -1 means no limit.
+; http://php.net/pgsql.max-persistent
+pgsql.max_persistent = -1
+
+; Maximum number of links (persistent+non persistent).  -1 means no limit.
+; http://php.net/pgsql.max-links
+pgsql.max_links = -1
+
+; Ignore PostgreSQL backends Notice message or not.
+; Notice message logging require a little overheads.
+; http://php.net/pgsql.ignore-notice
+pgsql.ignore_notice = 0
+
+; Log PostgreSQL backends Notice message or not.
+; Unless pgsql.ignore_notice=0, module cannot log notice message.
+; http://php.net/pgsql.log-notice
+pgsql.log_notice = 0
+
+[bcmath]
+; Number of decimal digits for all bcmath functions.
+; http://php.net/bcmath.scale
+bcmath.scale = 0
+
+[browscap]
+; http://php.net/browscap
+;browscap = extra/browscap.ini
+
+[Session]
+; Handler used to store/retrieve data.
+; http://php.net/session.save-handler
+session.save_handler = files
+
+; Argument passed to save_handler.  In the case of files, this is the path
+; where data files are stored. Note: Windows users have to change this
+; variable in order to use PHP's session functions.
+;
+; The path can be defined as:
+;
+;     session.save_path = "N;/path"
+;
+; where N is an integer.  Instead of storing all the session files in
+; /path, what this will do is use subdirectories N-levels deep, and
+; store the session data in those directories.  This is useful if
+; your OS has problems with many files in one directory, and is
+; a more efficient layout for servers that handle many sessions.
+;
+; NOTE 1: PHP will not create this directory structure automatically.
+;         You can use the script in the ext/session dir for that purpose.
+; NOTE 2: See the section on garbage collection below if you choose to
+;         use subdirectories for session storage
+;
+; The file storage module creates files using mode 600 by default.
+; You can change that by using
+;
+;     session.save_path = "N;MODE;/path"
+;
+; where MODE is the octal representation of the mode. Note that this
+; does not overwrite the process's umask.
+; http://php.net/session.save-path
+;session.save_path = "/var/lib/php/sessions"
+
+; Whether to use strict session mode.
+; Strict session mode does not accept an uninitialized session ID, and
+; regenerates the session ID if the browser sends an uninitialized session ID.
+; Strict mode protects applications from session fixation via a session adoption
+; vulnerability. It is disabled by default for maximum compatibility, but
+; enabling it is encouraged.
+; https://wiki.php.net/rfc/strict_sessions
+session.use_strict_mode = 0
+
+; Whether to use cookies.
+; http://php.net/session.use-cookies
+session.use_cookies = 1
+
+; http://php.net/session.cookie-secure
+;session.cookie_secure =
+
+; This option forces PHP to fetch and use a cookie for storing and maintaining
+; the session id. We encourage this operation as it's very helpful in combating
+; session hijacking when not specifying and managing your own session id. It is
+; not the be-all and end-all of session hijacking defense, but it's a good start.
+; http://php.net/session.use-only-cookies
+session.use_only_cookies = 1
+
+; Name of the session (used as cookie name).
+; http://php.net/session.name
+session.name = PHPSESSID
+
+; Initialize session on request startup.
+; http://php.net/session.auto-start
+session.auto_start = 0
+
+; Lifetime in seconds of cookie or, if 0, until browser is restarted.
+; http://php.net/session.cookie-lifetime
+session.cookie_lifetime = 0
+
+; The path for which the cookie is valid.
+; http://php.net/session.cookie-path
+session.cookie_path = /
+
+; The domain for which the cookie is valid.
+; http://php.net/session.cookie-domain
+session.cookie_domain =
+
+; Whether or not to add the httpOnly flag to the cookie, which makes it
+; inaccessible to browser scripting languages such as JavaScript.
+; http://php.net/session.cookie-httponly
+session.cookie_httponly =
+
+; Add SameSite attribute to cookie to help mitigate Cross-Site Request Forgery (CSRF/XSRF)
+; Current valid values are "Strict", "Lax" or "None". When using "None",
+; make sure to include the quotes, as `none` is interpreted like `false` in ini files.
+; https://tools.ietf.org/html/draft-west-first-party-cookies-07
+session.cookie_samesite =
+
+; Handler used to serialize data. php is the standard serializer of PHP.
+; http://php.net/session.serialize-handler
+session.serialize_handler = php
+
+; Defines the probability that the 'garbage collection' process is started on every
+; session initialization. The probability is calculated by using gc_probability/gc_divisor,
+; e.g. 1/100 means there is a 1% chance that the GC process starts on each request.
+; Default Value: 1
+; Development Value: 1
+; Production Value: 1
+; http://php.net/session.gc-probability
+session.gc_probability = 0
+
+; Defines the probability that the 'garbage collection' process is started on every
+; session initialization. The probability is calculated by using gc_probability/gc_divisor,
+; e.g. 1/100 means there is a 1% chance that the GC process starts on each request.
+; For high volume production servers, using a value of 1000 is a more efficient approach.
+; Default Value: 100
+; Development Value: 1000
+; Production Value: 1000
+; http://php.net/session.gc-divisor
+session.gc_divisor = 1000
+
+; After this number of seconds, stored data will be seen as 'garbage' and
+; cleaned up by the garbage collection process.
+; http://php.net/session.gc-maxlifetime
+session.gc_maxlifetime = 1440
+
+; NOTE: If you are using the subdirectory option for storing session files
+;       (see session.save_path above), then garbage collection does *not*
+;       happen automatically.  You will need to do your own garbage
+;       collection through a shell script, cron entry, or some other method.
+;       For example, the following script is the equivalent of setting
+;       session.gc_maxlifetime to 1440 (1440 seconds = 24 minutes):
+;          find /path/to/sessions -cmin +24 -type f | xargs rm
+
+; Check HTTP Referer to invalidate externally stored URLs containing ids.
+; HTTP_REFERER has to contain this substring for the session to be
+; considered as valid.
+; http://php.net/session.referer-check
+session.referer_check =
+
+; Set to {nocache,private,public,} to determine HTTP caching aspects
+; or leave this empty to avoid sending anti-caching headers.
+; http://php.net/session.cache-limiter
+session.cache_limiter = nocache
+
+; Document expires after n minutes.
+; http://php.net/session.cache-expire
+session.cache_expire = 180
+
+; trans sid support is disabled by default.
+; Use of trans sid may risk your users' security.
+; Use this option with caution.
+; - User may send URL contains active session ID
+;   to other person via. email/irc/etc.
+; - URL that contains active session ID may be stored
+;   in publicly accessible computer.
+; - User may access your site with the same session ID
+;   always using URL stored in browser's history or bookmarks.
+; http://php.net/session.use-trans-sid
+session.use_trans_sid = 0
+
+; Set session ID character length. This value could be between 22 to 256.
+; Shorter length than default is supported only for compatibility reason.
+; Users should use 32 or more chars.
+; http://php.net/session.sid-length
+; Default Value: 32
+; Development Value: 26
+; Production Value: 26
+session.sid_length = 26
+
+; The URL rewriter will look for URLs in a defined set of HTML tags.
+; <form> is special; if you include them here, the rewriter will
+; add a hidden <input> field with the info which is otherwise appended
+; to URLs. <form> tag's action attribute URL will not be modified
+; unless it is specified.
+; Note that all valid entries require a "=", even if no value follows.
+; Default Value: "a=href,area=href,frame=src,form="
+; Development Value: "a=href,area=href,frame=src,form="
+; Production Value: "a=href,area=href,frame=src,form="
+; http://php.net/url-rewriter.tags
+session.trans_sid_tags = "a=href,area=href,frame=src,form="
+
+; URL rewriter does not rewrite absolute URLs by default.
+; To enable rewrites for absolute paths, target hosts must be specified
+; at RUNTIME. i.e. use ini_set()
+; <form> tags is special. PHP will check action attribute's URL regardless
+; of session.trans_sid_tags setting.
+; If no host is defined, HTTP_HOST will be used for allowed host.
+; Example value: php.net,www.php.net,wiki.php.net
+; Use "," for multiple hosts. No spaces are allowed.
+; Default Value: ""
+; Development Value: ""
+; Production Value: ""
+;session.trans_sid_hosts=""
+
+; Define how many bits are stored in each character when converting
+; the binary hash data to something readable.
+; Possible values:
+;   4  (4 bits: 0-9, a-f)
+;   5  (5 bits: 0-9, a-v)
+;   6  (6 bits: 0-9, a-z, A-Z, "-", ",")
+; Default Value: 4
+; Development Value: 5
+; Production Value: 5
+; http://php.net/session.hash-bits-per-character
+session.sid_bits_per_character = 5
+
+; Enable upload progress tracking in $_SESSION
+; Default Value: On
+; Development Value: On
+; Production Value: On
+; http://php.net/session.upload-progress.enabled
+;session.upload_progress.enabled = On
+
+; Cleanup the progress information as soon as all POST data has been read
+; (i.e. upload completed).
+; Default Value: On
+; Development Value: On
+; Production Value: On
+; http://php.net/session.upload-progress.cleanup
+;session.upload_progress.cleanup = On
+
+; A prefix used for the upload progress key in $_SESSION
+; Default Value: "upload_progress_"
+; Development Value: "upload_progress_"
+; Production Value: "upload_progress_"
+; http://php.net/session.upload-progress.prefix
+;session.upload_progress.prefix = "upload_progress_"
+
+; The index name (concatenated with the prefix) in $_SESSION
+; containing the upload progress information
+; Default Value: "PHP_SESSION_UPLOAD_PROGRESS"
+; Development Value: "PHP_SESSION_UPLOAD_PROGRESS"
+; Production Value: "PHP_SESSION_UPLOAD_PROGRESS"
+; http://php.net/session.upload-progress.name
+;session.upload_progress.name = "PHP_SESSION_UPLOAD_PROGRESS"
+
+; How frequently the upload progress should be updated.
+; Given either in percentages (per-file), or in bytes
+; Default Value: "1%"
+; Development Value: "1%"
+; Production Value: "1%"
+; http://php.net/session.upload-progress.freq
+;session.upload_progress.freq =  "1%"
+
+; The minimum delay between updates, in seconds
+; Default Value: 1
+; Development Value: 1
+; Production Value: 1
+; http://php.net/session.upload-progress.min-freq
+;session.upload_progress.min_freq = "1"
+
+; Only write session data when session data is changed. Enabled by default.
+; http://php.net/session.lazy-write
+;session.lazy_write = On
+
+[Assertion]
+; Switch whether to compile assertions at all (to have no overhead at run-time)
+; -1: Do not compile at all
+;  0: Jump over assertion at run-time
+;  1: Execute assertions
+; Changing from or to a negative value is only possible in php.ini! (For turning assertions on and off at run-time, see assert.active, when zend.assertions = 1)
+; Default Value: 1
+; Development Value: 1
+; Production Value: -1
+; http://php.net/zend.assertions
+zend.assertions = -1
+
+; Assert(expr); active by default.
+; http://php.net/assert.active
+;assert.active = On
+
+; Throw an AssertionError on failed assertions
+; http://php.net/assert.exception
+;assert.exception = On
+
+; Issue a PHP warning for each failed assertion. (Overridden by assert.exception if active)
+; http://php.net/assert.warning
+;assert.warning = On
+
+; Don't bail out by default.
+; http://php.net/assert.bail
+;assert.bail = Off
+
+; User-function to be called if an assertion fails.
+; http://php.net/assert.callback
+;assert.callback = 0
+
+; Eval the expression with current error_reporting().  Set to true if you want
+; error_reporting(0) around the eval().
+; http://php.net/assert.quiet-eval
+;assert.quiet_eval = 0
+
+[COM]
+; path to a file containing GUIDs, IIDs or filenames of files with TypeLibs
+; http://php.net/com.typelib-file
+;com.typelib_file =
+
+; allow Distributed-COM calls
+; http://php.net/com.allow-dcom
+;com.allow_dcom = true
+
+; autoregister constants of a component's typlib on com_load()
+; http://php.net/com.autoregister-typelib
+;com.autoregister_typelib = true
+
+; register constants casesensitive
+; http://php.net/com.autoregister-casesensitive
+;com.autoregister_casesensitive = false
+
+; show warnings on duplicate constant registrations
+; http://php.net/com.autoregister-verbose
+;com.autoregister_verbose = true
+
+; The default character set code-page to use when passing strings to and from COM objects.
+; Default: system ANSI code page
+;com.code_page=
+
+[mbstring]
+; language for internal character representation.
+; This affects mb_send_mail() and mbstring.detect_order.
+; http://php.net/mbstring.language
+;mbstring.language = Japanese
+
+; Use of this INI entry is deprecated, use global internal_encoding instead.
+; internal/script encoding.
+; Some encoding cannot work as internal encoding. (e.g. SJIS, BIG5, ISO-2022-*)
+; If empty, default_charset or internal_encoding or iconv.internal_encoding is used.
+; The precedence is: default_charset < internal_encoding < iconv.internal_encoding
+;mbstring.internal_encoding =
+
+; Use of this INI entry is deprecated, use global input_encoding instead.
+; http input encoding.
+; mbstring.encoding_translation = On is needed to use this setting.
+; If empty, default_charset or input_encoding or mbstring.input is used.
+; The precedence is: default_charset < input_encoding < mbsting.http_input
+; http://php.net/mbstring.http-input
+;mbstring.http_input =
+
+; Use of this INI entry is deprecated, use global output_encoding instead.
+; http output encoding.
+; mb_output_handler must be registered as output buffer to function.
+; If empty, default_charset or output_encoding or mbstring.http_output is used.
+; The precedence is: default_charset < output_encoding < mbstring.http_output
+; To use an output encoding conversion, mbstring's output handler must be set
+; otherwise output encoding conversion cannot be performed.
+; http://php.net/mbstring.http-output
+;mbstring.http_output =
+
+; enable automatic encoding translation according to
+; mbstring.internal_encoding setting. Input chars are
+; converted to internal encoding by setting this to On.
+; Note: Do _not_ use automatic encoding translation for
+;       portable libs/applications.
+; http://php.net/mbstring.encoding-translation
+;mbstring.encoding_translation = Off
+
+; automatic encoding detection order.
+; "auto" detect order is changed according to mbstring.language
+; http://php.net/mbstring.detect-order
+;mbstring.detect_order = auto
+
+; substitute_character used when character cannot be converted
+; one from another
+; http://php.net/mbstring.substitute-character
+;mbstring.substitute_character = none
+
+; overload(replace) single byte functions by mbstring functions.
+; mail(), ereg(), etc are overloaded by mb_send_mail(), mb_ereg(),
+; etc. Possible values are 0,1,2,4 or combination of them.
+; For example, 7 for overload everything.
+; 0: No overload
+; 1: Overload mail() function
+; 2: Overload str*() functions
+; 4: Overload ereg*() functions
+; http://php.net/mbstring.func-overload
+;mbstring.func_overload = 0
+
+; enable strict encoding detection.
+; Default: Off
+;mbstring.strict_detection = On
+
+; This directive specifies the regex pattern of content types for which mb_output_handler()
+; is activated.
+; Default: mbstring.http_output_conv_mimetype=^(text/|application/xhtml\+xml)
+;mbstring.http_output_conv_mimetype=
+
+; This directive specifies maximum stack depth for mbstring regular expressions. It is similar
+; to the pcre.recursion_limit for PCRE.
+; Default: 100000
+;mbstring.regex_stack_limit=100000
+
+; This directive specifies maximum retry count for mbstring regular expressions. It is similar
+; to the pcre.backtrack_limit for PCRE.
+; Default: 1000000
+;mbstring.regex_retry_limit=1000000
+
+[gd]
+; Tell the jpeg decode to ignore warnings and try to create
+; a gd image. The warning will then be displayed as notices
+; disabled by default
+; http://php.net/gd.jpeg-ignore-warning
+;gd.jpeg_ignore_warning = 1
+
+[exif]
+; Exif UNICODE user comments are handled as UCS-2BE/UCS-2LE and JIS as JIS.
+; With mbstring support this will automatically be converted into the encoding
+; given by corresponding encode setting. When empty mbstring.internal_encoding
+; is used. For the decode settings you can distinguish between motorola and
+; intel byte order. A decode setting cannot be empty.
+; http://php.net/exif.encode-unicode
+;exif.encode_unicode = ISO-8859-15
+
+; http://php.net/exif.decode-unicode-motorola
+;exif.decode_unicode_motorola = UCS-2BE
+
+; http://php.net/exif.decode-unicode-intel
+;exif.decode_unicode_intel    = UCS-2LE
+
+; http://php.net/exif.encode-jis
+;exif.encode_jis =
+
+; http://php.net/exif.decode-jis-motorola
+;exif.decode_jis_motorola = JIS
+
+; http://php.net/exif.decode-jis-intel
+;exif.decode_jis_intel    = JIS
+
+[Tidy]
+; The path to a default tidy configuration file to use when using tidy
+; http://php.net/tidy.default-config
+;tidy.default_config = /usr/local/lib/php/default.tcfg
+
+; Should tidy clean and repair output automatically?
+; WARNING: Do not use this option if you are generating non-html content
+; such as dynamic images
+; http://php.net/tidy.clean-output
+tidy.clean_output = Off
+
+[soap]
+; Enables or disables WSDL caching feature.
+; http://php.net/soap.wsdl-cache-enabled
+soap.wsdl_cache_enabled=1
+
+; Sets the directory name where SOAP extension will put cache files.
+; http://php.net/soap.wsdl-cache-dir
+soap.wsdl_cache_dir="/tmp"
+
+; (time to live) Sets the number of second while cached file will be used
+; instead of original one.
+; http://php.net/soap.wsdl-cache-ttl
+soap.wsdl_cache_ttl=86400
+
+; Sets the size of the cache limit. (Max. number of WSDL files to cache)
+soap.wsdl_cache_limit = 5
+
+[sysvshm]
+; A default size of the shared memory segment
+;sysvshm.init_mem = 10000
+
+[ldap]
+; Sets the maximum number of open links or -1 for unlimited.
+ldap.max_links = -1
+
+[dba]
+;dba.default_handler=
+
+[opcache]
+; Determines if Zend OPCache is enabled
+;opcache.enable=1
+
+; Determines if Zend OPCache is enabled for the CLI version of PHP
+;opcache.enable_cli=0
+
+; The OPcache shared memory storage size.
+;opcache.memory_consumption=128
+
+; The amount of memory for interned strings in Mbytes.
+;opcache.interned_strings_buffer=8
+
+; The maximum number of keys (scripts) in the OPcache hash table.
+; Only numbers between 200 and 1000000 are allowed.
+;opcache.max_accelerated_files=10000
+
+; The maximum percentage of "wasted" memory until a restart is scheduled.
+;opcache.max_wasted_percentage=5
+
+; When this directive is enabled, the OPcache appends the current working
+; directory to the script key, thus eliminating possible collisions between
+; files with the same name (basename). Disabling the directive improves
+; performance, but may break existing applications.
+;opcache.use_cwd=1
+
+; When disabled, you must reset the OPcache manually or restart the
+; webserver for changes to the filesystem to take effect.
+;opcache.validate_timestamps=1
+
+; How often (in seconds) to check file timestamps for changes to the shared
+; memory storage allocation. ("1" means validate once per second, but only
+; once per request. "0" means always validate)
+;opcache.revalidate_freq=2
+
+; Enables or disables file search in include_path optimization
+;opcache.revalidate_path=0
+
+; If disabled, all PHPDoc comments are dropped from the code to reduce the
+; size of the optimized code.
+;opcache.save_comments=1
+
+; Allow file existence override (file_exists, etc.) performance feature.
+;opcache.enable_file_override=0
+
+; A bitmask, where each bit enables or disables the appropriate OPcache
+; passes
+;opcache.optimization_level=0x7FFFBFFF
+
+;opcache.dups_fix=0
+
+; The location of the OPcache blacklist file (wildcards allowed).
+; Each OPcache blacklist file is a text file that holds the names of files
+; that should not be accelerated. The file format is to add each filename
+; to a new line. The filename may be a full path or just a file prefix
+; (i.e., /var/www/x  blacklists all the files and directories in /var/www
+; that start with 'x'). Line starting with a ; are ignored (comments).
+;opcache.blacklist_filename=
+
+; Allows exclusion of large files from being cached. By default all files
+; are cached.
+;opcache.max_file_size=0
+
+; Check the cache checksum each N requests.
+; The default value of "0" means that the checks are disabled.
+;opcache.consistency_checks=0
+
+; How long to wait (in seconds) for a scheduled restart to begin if the cache
+; is not being accessed.
+;opcache.force_restart_timeout=180
+
+; OPcache error_log file name. Empty string assumes "stderr".
+;opcache.error_log=
+
+; All OPcache errors go to the Web server log.
+; By default, only fatal errors (level 0) or errors (level 1) are logged.
+; You can also enable warnings (level 2), info messages (level 3) or
+; debug messages (level 4).
+;opcache.log_verbosity_level=1
+
+; Preferred Shared Memory back-end. Leave empty and let the system decide.
+;opcache.preferred_memory_model=
+
+; Protect the shared memory from unexpected writing during script execution.
+; Useful for internal debugging only.
+;opcache.protect_memory=0
+
+; Allows calling OPcache API functions only from PHP scripts which path is
+; started from specified string. The default "" means no restriction
+;opcache.restrict_api=
+
+; Mapping base of shared memory segments (for Windows only). All the PHP
+; processes have to map shared memory into the same address space. This
+; directive allows to manually fix the "Unable to reattach to base address"
+; errors.
+;opcache.mmap_base=
+
+; Facilitates multiple OPcache instances per user (for Windows only). All PHP
+; processes with the same cache ID and user share an OPcache instance.
+;opcache.cache_id=
+
+; Enables and sets the second level cache directory.
+; It should improve performance when SHM memory is full, at server restart or
+; SHM reset. The default "" disables file based caching.
+;opcache.file_cache=
+
+; Enables or disables opcode caching in shared memory.
+;opcache.file_cache_only=0
+
+; Enables or disables checksum validation when script loaded from file cache.
+;opcache.file_cache_consistency_checks=1
+
+; Implies opcache.file_cache_only=1 for a certain process that failed to
+; reattach to the shared memory (for Windows only). Explicitly enabled file
+; cache is required.
+;opcache.file_cache_fallback=1
+
+; Enables or disables copying of PHP code (text segment) into HUGE PAGES.
+; This should improve performance, but requires appropriate OS configuration.
+;opcache.huge_code_pages=1
+
+; Validate cached file permissions.
+;opcache.validate_permission=0
+
+; Prevent name collisions in chroot'ed environment.
+;opcache.validate_root=0
+
+; If specified, it produces opcode dumps for debugging different stages of
+; optimizations.
+;opcache.opt_debug_level=0
+
+; Specifies a PHP script that is going to be compiled and executed at server
+; start-up.
+; http://php.net/opcache.preload
+;opcache.preload=
+
+; Preloading code as root is not allowed for security reasons. This directive
+; facilitates to let the preloading to be run as another user.
+; http://php.net/opcache.preload_user
+;opcache.preload_user=
+
+; Prevents caching files that are less than this number of seconds old. It
+; protects from caching of incompletely updated files. In case all file updates
+; on your site are atomic, you may increase performance by setting it to "0".
+;opcache.file_update_protection=2
+
+; Absolute path used to store shared lockfiles (for *nix only).
+;opcache.lockfile_path=/tmp
+
+[curl]
+; A default value for the CURLOPT_CAINFO option. This is required to be an
+; absolute path.
+;curl.cainfo =
+
+[openssl]
+; The location of a Certificate Authority (CA) file on the local filesystem
+; to use when verifying the identity of SSL/TLS peers. Most users should
+; not specify a value for this directive as PHP will attempt to use the
+; OS-managed cert stores in its absence. If specified, this value may still
+; be overridden on a per-stream basis via the "cafile" SSL stream context
+; option.
+;openssl.cafile=
+
+; If openssl.cafile is not specified or if the CA file is not found, the
+; directory pointed to by openssl.capath is searched for a suitable
+; certificate. This value must be a correctly hashed certificate directory.
+; Most users should not specify a value for this directive as PHP will
+; attempt to use the OS-managed cert stores in its absence. If specified,
+; this value may still be overridden on a per-stream basis via the "capath"
+; SSL stream context option.
+;openssl.capath=
+
+[ffi]
+; FFI API restriction. Possible values:
+; "preload" - enabled in CLI scripts and preloaded files (default)
+; "false"   - always disabled
+; "true"    - always enabled
+;ffi.enable=preload
+
+; List of headers files to preload, wildcard patterns allowed.
+;ffi.preload=
+Removing intermediate container 1c33672b13e2
+ ---> dc89ba41b328
+Step 4/7 : RUN apt-get install -y nginx
+ ---> Running in 22b05d83e589
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  geoip-database iproute2 libatm1 libelf1 libgeoip1 libmnl0
+  libnginx-mod-http-geoip libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libxtables12 nginx-common nginx-core
+Suggested packages:
+  iproute2-doc geoip-bin fcgiwrap nginx-doc ssl-cert
+The following NEW packages will be installed:
+  geoip-database iproute2 libatm1 libelf1 libgeoip1 libmnl0
+  libnginx-mod-http-geoip libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libxtables12 nginx nginx-common nginx-core
+0 upgraded, 15 newly installed, 0 to remove and 8 not upgraded.
+Need to get 3590 kB of archives.
+After this operation, 11.9 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libelf1 amd64 0.170-0.4ubuntu0.1 [44.8 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 libmnl0 amd64 1.0.4-2 [12.3 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 iproute2 amd64 4.15.0-2ubuntu1.1 [723 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libatm1 amd64 1:2.5.1-2build1 [21.9 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libxtables12 amd64 1.6.1-2ubuntu2 [27.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 geoip-database all 20180315-1 [2090 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgeoip1 amd64 1.6.12-1 [71.8 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-common all 1.14.0-0ubuntu1.7 [37.4 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-geoip amd64 1.14.0-0ubuntu1.7 [11.2 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-image-filter amd64 1.14.0-0ubuntu1.7 [14.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.14.0-0ubuntu1.7 [13.0 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-mail amd64 1.14.0-0ubuntu1.7 [41.8 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libnginx-mod-stream amd64 1.14.0-0ubuntu1.7 [63.7 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx-core amd64 1.14.0-0ubuntu1.7 [413 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 nginx all 1.14.0-0ubuntu1.7 [3596 B]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 3590 kB in 6s (592 kB/s)
+Selecting previously unselected package libelf1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12643 files and directories currently installed.)
+Preparing to unpack .../00-libelf1_0.170-0.4ubuntu0.1_amd64.deb ...
+Unpacking libelf1:amd64 (0.170-0.4ubuntu0.1) ...
+Selecting previously unselected package libmnl0:amd64.
+Preparing to unpack .../01-libmnl0_1.0.4-2_amd64.deb ...
+Unpacking libmnl0:amd64 (1.0.4-2) ...
+Selecting previously unselected package iproute2.
+Preparing to unpack .../02-iproute2_4.15.0-2ubuntu1.1_amd64.deb ...
+Unpacking iproute2 (4.15.0-2ubuntu1.1) ...
+Selecting previously unselected package libatm1:amd64.
+Preparing to unpack .../03-libatm1_1%3a2.5.1-2build1_amd64.deb ...
+Unpacking libatm1:amd64 (1:2.5.1-2build1) ...
+Selecting previously unselected package libxtables12:amd64.
+Preparing to unpack .../04-libxtables12_1.6.1-2ubuntu2_amd64.deb ...
+Unpacking libxtables12:amd64 (1.6.1-2ubuntu2) ...
+Selecting previously unselected package geoip-database.
+Preparing to unpack .../05-geoip-database_20180315-1_all.deb ...
+Unpacking geoip-database (20180315-1) ...
+Selecting previously unselected package libgeoip1:amd64.
+Preparing to unpack .../06-libgeoip1_1.6.12-1_amd64.deb ...
+Unpacking libgeoip1:amd64 (1.6.12-1) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../07-nginx-common_1.14.0-0ubuntu1.7_all.deb ...
+Unpacking nginx-common (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-geoip.
+Preparing to unpack .../08-libnginx-mod-http-geoip_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-geoip (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../09-libnginx-mod-http-image-filter_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-image-filter (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../10-libnginx-mod-http-xslt-filter_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../11-libnginx-mod-mail_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-mail (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../12-libnginx-mod-stream_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking libnginx-mod-stream (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../13-nginx-core_1.14.0-0ubuntu1.7_amd64.deb ...
+Unpacking nginx-core (1.14.0-0ubuntu1.7) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../14-nginx_1.14.0-0ubuntu1.7_all.deb ...
+Unpacking nginx (1.14.0-0ubuntu1.7) ...
+Setting up geoip-database (20180315-1) ...
+Setting up libelf1:amd64 (0.170-0.4ubuntu0.1) ...
+Setting up nginx-common (1.14.0-0ubuntu1.7) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.
+Setting up libnginx-mod-http-image-filter (1.14.0-0ubuntu1.7) ...
+Setting up libgeoip1:amd64 (1.6.12-1) ...
+Setting up libatm1:amd64 (1:2.5.1-2build1) ...
+Setting up libxtables12:amd64 (1.6.1-2ubuntu2) ...
+Setting up libnginx-mod-mail (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-http-xslt-filter (1.14.0-0ubuntu1.7) ...
+Setting up libmnl0:amd64 (1.0.4-2) ...
+Setting up libnginx-mod-http-geoip (1.14.0-0ubuntu1.7) ...
+Setting up libnginx-mod-stream (1.14.0-0ubuntu1.7) ...
+Setting up iproute2 (4.15.0-2ubuntu1.1) ...
+Setting up nginx-core (1.14.0-0ubuntu1.7) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up nginx (1.14.0-0ubuntu1.7) ...
+Processing triggers for systemd (237-3ubuntu10.41) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Removing intermediate container 22b05d83e589
+ ---> 3959b0dab6af
+Step 5/7 : COPY ./nginx/conf.d /etc/nginx/conf.d
+ ---> 6bd96a301afa
+Step 6/7 : COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+ ---> cab5faaf76a6
+Step 7/7 : RUN php -v && nginx -v
+ ---> Running in 70f4d9c212fa
+PHP 7.4.6 (cli) (built: May 14 2020 10:02:44) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.6, Copyright (c), by Zend Technologies
+[91mnginx version: nginx/1.14.0 (Ubuntu)
+[0mRemoving intermediate container 70f4d9c212fa
+ ---> 7c1061f18056
+Successfully built 7c1061f18056
+Successfully tagged phpbuild:latest
